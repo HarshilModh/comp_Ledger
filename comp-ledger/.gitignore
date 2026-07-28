@@ -1,0 +1,5 @@
+node_modules/
+.env
+dist/
+data/index.json
+data/demo-fallback.json

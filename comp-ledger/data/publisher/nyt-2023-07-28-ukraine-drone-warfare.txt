@@ -1,0 +1,17 @@
+Ukraine's Drone War: How $400 Devices Are Destroying $3 Million Tanks
+By Andrew Kramer and Thomas Gibbons-Neff
+Source: https://www.nytimes.com/2023/07/28/world/europe/ukraine-drone-warfare-fpv.html
+---
+On a monitor in a basement command post outside Bakhmut, a Ukrainian operator guided a first-person-view drone toward a Russian T-72B3 tank partially concealed in a tree line 4.7 kilometers away. The drone, assembled from commercial components costing approximately $400, carried a modified RPG-7 warhead. At 11:43 a.m. on July 14, it struck the tank's turret ring, detonating the ammunition carousel and destroying a vehicle valued at $3 million.
+
+The scene, witnessed by a Times reporter embedded with Ukraine's 92nd Mechanized Brigade, illustrates a revolution in warfare that military analysts say has fundamentally altered the economics and tactics of ground combat. Ukraine is now producing approximately 50,000 first-person-view attack drones per month across a network of 83 workshops and small factories, according to figures provided by the Ministry of Digital Transformation.
+
+The 92nd Brigade alone operates 847 FPV drones and 234 reconnaissance drones, organized into a dedicated "unmanned systems battalion" of 312 personnel established in March 2023. The battalion's commander, who gave only his call sign "Phantom," told The Times that his unit destroys an average of 14 Russian vehicles per week at a total drone expenditure cost of approximately $78,000 — compared to the estimated $42 million in equipment destroyed.
+
+The economics are striking. A single Javelin anti-tank missile costs $178,000. A Ukrainian FPV drone carrying a shaped-charge warhead capable of penetrating equivalent armor costs between $370 and $550, depending on the model. Ukraine has effectively created a weapon that is 300 to 400 times cheaper than its Western equivalent for comparable tactical effect.
+
+Technical specifications of the most common Ukrainian FPV platform, the "Vampire" model developed by a Dnipro-based volunteer group, include: DJI O3 Air Unit video transmission system operating at 5.8 GHz, maximum range of 7.2 kilometers line-of-sight, flight time of 8 minutes at combat speed, and a payload capacity of 1.8 kilograms. The control system uses modified gaming controllers with analog stick inputs feeding through a custom firmware called "WarPilot 3.1" developed by Ukrainian software engineers.
+
+Russian forces have responded by deploying electronic warfare systems, including the Pole-21 and R-330Zh Zhitel jammers, which Ukrainian operators say are effective at ranges below 2 kilometers but can be circumvented by pre-programming flight paths that allow the drone to continue autonomously when the control link is severed.
+
+Military analysts said the drone war has created a new battlefield reality. "We are witnessing the democratization of precision strike," said Jack Watling, a senior research fellow at the Royal United Services Institute in London. "The implications extend far beyond Ukraine."

@@ -1,0 +1,19 @@
+Oil Industry's Carbon Capture Projects Are Failing While Billions in Subsidies Flow
+By Hiroko Tabuchi and Clifford Krauss
+Source: https://www.nytimes.com/2024/01/30/climate/carbon-capture-oil-industry-subsidies.html
+---
+The oil and gas industry's flagship carbon capture projects are operating far below their promised capacity while companies collect billions of dollars in federal tax credits, a New York Times investigation has found, raising questions about whether the technology is serving as a climate solution or a subsidy for continued fossil fuel production.
+
+The investigation examined all 12 large-scale carbon capture facilities operating in the United States as of January 2024, using Environmental Protection Agency monitoring data, state regulatory filings, and company disclosures. The findings: the facilities collectively captured 18.2 million metric tons of CO2 in 2023, just 57 percent of their combined stated capacity of 31.9 million metric tons per year. Five of the 12 facilities operated below 40 percent capacity.
+
+The worst performer was Occidental Petroleum's Century Plant in Pecos County, Texas, which captured 4.1 million metric tons in 2023 against a design capacity of 8.4 million metric tons — a utilization rate of 49 percent. Despite this underperformance, Occidental claimed an estimated $205 million in Section 45Q tax credits for the facility in 2023, based on the volume actually captured. The company is building a larger direct air capture facility nearby, Stratos, with $1.1 billion in Department of Energy support.
+
+The Inflation Reduction Act of 2022 increased the Section 45Q tax credit from $50 to $85 per metric ton for geologically stored carbon, creating a surge in project announcements. The Treasury Department estimates the credits will cost taxpayers $3.2 billion annually by 2027. But industry data compiled by The Times shows that 78 percent of all carbon captured in the U.S. is used for enhanced oil recovery — pumped underground to extract additional petroleum — rather than permanent storage.
+
+"The fundamental problem is that we're subsidizing a technology whose primary application is producing more oil," said Dr. June Sekera, a visiting researcher at the New School for Social Research who studies carbon removal policy. "The climate math doesn't work when your carbon capture project enables the extraction of additional fossil fuels whose combustion exceeds the carbon you've stored."
+
+At the Petra Nova facility in Fort Bend County, Texas — once the largest post-combustion carbon capture project in the world — operator NRG Energy shut down operations in 2020 after three years of chronic mechanical failures and cost overruns. The facility captured an average of 1.4 million metric tons annually against a design target of 1.6 million metric tons, while the oil wells it fed produced approximately 4.2 million barrels of crude whose eventual combustion would release an estimated 1.8 million metric tons of CO2.
+
+Occidental spokesperson Cindy Erickson said the company's carbon capture operations "demonstrate the viability of the technology at scale" and that "operational improvements are ongoing."
+
+The American Petroleum Institute said carbon capture is "essential to meeting global emissions targets" and that "increased federal support through the IRA will enable the technology to scale more rapidly."

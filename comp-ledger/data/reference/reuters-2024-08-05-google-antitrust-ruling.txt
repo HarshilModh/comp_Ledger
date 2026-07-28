@@ -1,0 +1,20 @@
+Google Loses Landmark US Antitrust Case Over Search Dominance
+Diane Bartz | Reuters
+---
+A US federal judge ruled on Monday that Google illegally maintained a monopoly in the internet search market, handing the Justice Department a historic victory in the most significant antitrust case against a technology company in a generation.
+
+Judge Amit Mehta of the US District Court for the District of Columbia found that Google violated antitrust law by paying billions of dollars annually to be the default search engine on smartphones and web browsers, effectively locking out competitors.
+
+"Google is a monopolist, and it has acted as one to maintain its monopoly," Mehta wrote in his ruling, which followed a 10-week trial last fall.
+
+The decision could reshape the technology landscape, though its practical impact will depend on what remedies the court imposes in a separate proceeding expected later this year. Options reportedly under consideration range from prohibiting default search agreements to potentially requiring structural changes at the company.
+
+Google said it would appeal the ruling and disputed the judge's characterization of its market position. "This decision recognizes that Google offers the best search engine, but concludes that we shouldn't be allowed to make it easily available," said Kent Walker, Google's president of global affairs.
+
+The Justice Department hailed the decision as a landmark. "No company -- no matter how large or influential -- is above the law," said Attorney General Merrick Garland.
+
+The case was filed during the Trump administration in 2020 and continued under Biden, reflecting rare bipartisan agreement on the need to rein in technology giants. It drew comparisons to the landmark Microsoft antitrust case of the late 1990s.
+
+Industry analysts said the ruling could have cascading effects beyond Google, potentially affecting how other tech platforms use their market power to maintain dominance. Apple, which receives billions annually from Google for default search placement on iPhones, could see a significant revenue stream threatened.
+
+A separate remedy trial is expected in early 2025 to determine what changes Google must make to comply with the ruling.

@@ -1,0 +1,18 @@
+Sam Altman Returns as OpenAI CEO After Chaotic Five Days
+Hayden Field and Jennifer Elias | CNBC
+---
+Sam Altman will return as CEO of OpenAI, the company announced late Tuesday, capping five days of unprecedented corporate chaos that saw the AI company's board implode under pressure from employees and investors.
+
+The resolution includes a new initial board of directors that removes the members who voted to fire Altman. The new board will be chaired by former Salesforce co-CEO Bret Taylor, with former Treasury Secretary Larry Summers also joining. An independent investigation into the circumstances of Altman's firing will be conducted.
+
+The outcome represents a complete reversal for the board members who removed Altman last Friday, citing a loss of confidence in his leadership. Their stated concerns about communication issues were never publicly elaborated upon, and the new governance structure appears designed to prevent similar unilateral actions.
+
+Microsoft CEO Satya Nadella expressed support for the resolution, though the episode has raised questions about the unusual corporate structure that left the software giant -- which has invested reportedly $13 billion in OpenAI -- without a board seat or veto power.
+
+"We are encouraged by the changes to the OpenAI board," Nadella said in a statement. "We believe this is a first step toward more stable governance."
+
+The crisis laid bare tensions that have been building within the AI industry over how to balance rapid innovation with safety concerns. OpenAI's unique structure -- a capped-profit company controlled by a nonprofit board -- was designed to keep safety paramount but proved vulnerable to governance breakdowns.
+
+Employees who had threatened to leave celebrated the announcement, though some observers noted that the outcome may shift power within OpenAI toward commercial interests and away from the safety-focused researchers who supported the original board's authority.
+
+The episode has prompted broader discussion about corporate governance in AI companies and whether existing structures are adequate for organizations developing increasingly powerful technology. Several analysts predict governance reforms across the industry in the coming months.

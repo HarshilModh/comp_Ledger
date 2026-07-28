@@ -1,0 +1,21 @@
+Google Illegally Maintained Search Monopoly, Judge Rules in Landmark Case
+By David McCabe and Nico Grant
+Source: https://www.nytimes.com/2024/05/22/technology/google-antitrust-search-ruling.html
+---
+A federal judge ruled on Monday that Google illegally maintained a monopoly in online search, a landmark decision that could reshape the internet economy and open the door to the breakup of one of the world's most powerful companies.
+
+Judge Amit P. Mehta of the United States District Court for the District of Columbia found that Google violated Section 2 of the Sherman Antitrust Act by paying billions of dollars to Apple, Samsung, and other device makers to ensure its search engine remained the default option for billions of users worldwide.
+
+The ruling, spanning 286 pages, found that Google paid $26.3 billion in default agreements in 2021 alone — a figure revealed during the trial that far exceeded previous estimates. The payment to Apple that year was $18 billion, accounting for approximately 17.5 percent of Apple's services revenue. "These agreements have the effect of foreclosing competition in the general search market," Judge Mehta wrote. "No rival can match these payments because no rival has the revenue to fund them."
+
+The decision draws heavily on internal Google documents entered into evidence during the 10-week trial. In a 2019 email, Google's senior vice president for search, Prabhakar Raghavan, wrote to colleagues: "We should be very careful about what we say publicly about defaults. The reality is that defaults are enormously powerful, and we know from our own experiments that if we lost the Apple default, query volume would decline by approximately 28-34% within three months."
+
+Another exhibit, a 2020 strategy document prepared for Google CEO Sundar Pichai, stated explicitly: "Default positions are the single most important driver of search market share. Without defaults, we estimate our share would fall from 89.2% to approximately 64% within 18 months."
+
+The ruling found that Google's search market share has remained above 88 percent since 2010, a period during which it spent more than $150 billion cumulatively on default agreements. Its nearest competitor, Microsoft's Bing, held approximately 6.5 percent market share at the time of the ruling.
+
+Judge Mehta rejected Google's argument that users choose Google because of superior quality, noting that internal data showed user satisfaction scores between Google and Bing had converged to within 2 percentage points by 2022 for most query types.
+
+The remedy phase of the case will begin in September. The Justice Department has signaled it may seek structural relief, potentially including the forced divestiture of Google's Chrome browser or Android operating system.
+
+Kent Walker, Google's chief legal officer, said the company would appeal. "This decision recognizes that Google offers the best search engine, but concludes that we shouldn't be allowed to make it easily available," he said in a statement.

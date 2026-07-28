@@ -1,0 +1,17 @@
+Major Corporations' Carbon Offset Claims Are Based on Phantom Reductions, Analysis Finds
+By Hiroko Tabuchi and Catrin Einhorn
+Source: https://www.nytimes.com/2024/04/08/climate/carbon-offsets-corporate-greenwashing.html
+---
+An investigation by The New York Times into the carbon offset programs used by some of America's largest corporations has found that the vast majority of credits purchased do not represent genuine emissions reductions, undermining net-zero pledges made by companies including Delta Air Lines, JPMorgan Chase, and Shell.
+
+The Times examined 2,847 offset projects registered with the four major voluntary carbon market standards — Verra, Gold Standard, American Carbon Registry, and Climate Action Reserve — that sold credits to Fortune 500 companies between 2020 and 2023. Using satellite imagery, field verification, and independent modeling, the investigation determined that approximately 68 percent of the credits examined — representing 89.4 million metric tons of claimed CO2 reductions — were based on inflated baselines, questionable additionality claims, or forests that were never genuinely at risk of deforestation.
+
+The largest category of problematic offsets involves "avoided deforestation" projects in tropical forests. The Times identified 127 such projects, collectively covering 14.8 million hectares, where the claimed deforestation rates used to calculate credits exceeded actual deforestation in comparable unprotected areas by an average of 4.7 times.
+
+One project in Madre de Dios, Peru — operated by a company called Bosques Amazonicos and registered with Verra as project VCS-1360 — has generated 12.7 million carbon credits since 2012, sold to buyers including Delta, Microsoft, and BHP Group at prices ranging from $3.20 to $14.80 per credit. The Times's satellite analysis found that the project area experienced a deforestation rate of 0.12 percent per year between 2012 and 2023, compared to the 3.8 percent annual rate claimed in the project's baseline scenario. The actual carbon benefit of the project is approximately 94 percent lower than claimed.
+
+Delta Air Lines, which purchased 27.3 million carbon credits between 2020 and 2022 at a cost of approximately $137 million to support its "carbon neutral" claim, quietly dropped the "carbon neutral" language from its marketing in January 2023 after internal analysis raised concerns about credit quality. A Delta spokesperson said the company "continues to invest in high-quality carbon removal solutions" but declined to discuss specific projects.
+
+Verra, the world's largest carbon credit registry, disputed The Times's methodology. "Our standards undergo rigorous third-party verification," said CEO David Antonioli. "Retrospective analyses using different baselines do not invalidate the assessment at the time of crediting."
+
+Academic researchers who have conducted similar analyses largely corroborated The Times's findings. A 2023 study by researchers at the University of Cambridge examined 32 Verra rainforest projects and concluded that 90 percent showed "no evidence of reduced deforestation compared to synthetic controls."

@@ -1,0 +1,20 @@
+Former AI Safety Researchers Warn of Inadequate Safeguards at Major Labs
+Dan Milmo | The Guardian
+---
+A group of current and former employees at leading artificial intelligence companies have issued an open letter warning that safety concerns are being systematically deprioritized in the race to build more powerful AI systems.
+
+The letter, signed by individuals who reportedly worked at OpenAI, Google DeepMind, and other major AI laboratories, calls for greater transparency, stronger whistleblower protections, and independent oversight of AI development.
+
+"The companies building the most powerful AI systems have financial incentives that do not always align with safety," the letter states. "Current corporate governance structures are insufficient to ensure that safety concerns receive adequate weight in decision-making."
+
+The signatories, some of whom have left their positions, describe a culture at major labs where raising safety concerns is reportedly met with resistance and where commercial pressures increasingly override caution. They call on companies to establish independent safety boards with real authority and for governments to mandate safety evaluations before deployment of advanced systems.
+
+The letter comes amid a wave of departures from AI safety teams at major companies. Reports indicate that several senior researchers focused on AI alignment and safety have left OpenAI in recent months, though the company disputes characterizations of a safety exodus.
+
+OpenAI said in a statement that safety remains central to its mission and pointed to its governance reforms following last year's leadership crisis. Google DeepMind said it maintains rigorous safety testing protocols.
+
+Industry observers noted that the tension between safety and commercial deployment has intensified as competition heats up. Companies face pressure from investors to ship products and from rivals to maintain technological leads.
+
+"There's a genuine collective action problem," said a professor of computer science at Stanford University. "Even if one company wants to move carefully, the fear that competitors will move faster creates enormous pressure."
+
+Government officials in both the US and UK have expressed interest in addressing the concerns raised in the letter, though concrete regulatory responses remain in development.

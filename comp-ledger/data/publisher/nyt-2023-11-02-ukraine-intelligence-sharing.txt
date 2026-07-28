@@ -1,0 +1,21 @@
+U.S. Shares Real-Time Satellite Intelligence With Ukraine, Expanding Covert Support
+By Julian Barnes and Helene Cooper
+Source: https://www.nytimes.com/2023/11/02/us/politics/ukraine-satellite-intelligence-sharing.html
+---
+The United States has been providing Ukraine with near-real-time satellite imagery and electronic intelligence that has enabled Ukrainian forces to strike Russian command posts, ammunition depots, and air defense systems deep behind the front lines, according to current and former officials and classified documents reviewed by The New York Times.
+
+The intelligence-sharing program, which has expanded significantly since its inception in February 2022, now delivers targeting information to Ukrainian military commanders within 24 minutes of satellite collection — down from an average of 96 minutes in the first months of the war, according to a briefing document prepared for the House Intelligence Committee in September 2023.
+
+The program operates through a dedicated facility at Ramstein Air Base in Germany, where 147 American intelligence analysts work in a secure compartmented information facility known internally as "the Fishbowl." The analysts process imagery from National Reconnaissance Office satellites and signals intelligence from NSA collection platforms, then transmit sanitized targeting packages to a Ukrainian military intelligence counterpart facility in western Ukraine via an encrypted link designated GRYPHON-7.
+
+Under the program's rules, American analysts are prohibited from providing targeting data for strikes on internationally recognized Russian territory. However, the documents show that this restriction has been interpreted to exclude Crimea, which the United States does not recognize as Russian sovereign territory. Since March 2023, American intelligence has been used to support at least 37 Ukrainian strikes against military targets on the peninsula, including the October 2023 attack on the Black Sea Fleet headquarters in Sevastopol that killed 34 Russian personnel.
+
+The satellite intelligence includes thermal imaging that identifies recently fired artillery positions, synthetic aperture radar data that detects vehicle movements at night or through cloud cover, and signals intelligence mapping Russian communication networks. A single targeting package typically combines data from three to five separate collection platforms.
+
+"The quality of what they receive is extraordinary," said a former Pentagon official who helped design the program. "It's not exactly what a U.S. combatant commander would see, but it's close. We remove sources and methods but preserve the tactical utility."
+
+Russia has protested the intelligence sharing as making the United States a co-belligerent. Foreign Ministry spokesperson Maria Zakharova said on October 15 that "American satellites directing Ukrainian strikes makes Washington a direct participant in this conflict."
+
+The Pentagon declined to comment on specific intelligence activities but said the United States "provides Ukraine with information to help it defend its sovereign territory."
+
+Senior Ukrainian military intelligence officials told The Times that American satellite data was instrumental in the successful strike on the Kerch Strait bridge in July 2023, which severed a key Russian supply route for 17 days.

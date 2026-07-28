@@ -1,0 +1,17 @@
+New Intelligence Strengthens Assessment That Wuhan Lab Incident May Have Caused Pandemic
+By Julian Barnes and David Sanger
+Source: https://www.nytimes.com/2021/06/14/us/politics/wuhan-lab-intelligence-covid.html
+---
+A previously undisclosed intelligence report, circulated among senior officials in the Biden administration in late May, provides new evidence that three researchers at China's Wuhan Institute of Virology became ill enough in November 2019 to seek hospital care, lending fresh weight to the theory that the pandemic may have originated from a laboratory accident.
+
+The report, produced by the National Center for Medical Intelligence at Fort Detrick, Maryland, identifies the three researchers by their institutional roles: a senior virologist in the bat coronavirus program, a laboratory technician in the BSL-4 facility, and a graduate student working under the direction of Dr. Shi Zhengli, known as China's "bat woman." All three sought treatment at Wuhan Central Hospital between November 7 and November 16, 2019, according to signals intelligence intercepts.
+
+The symptoms described in the intercepts — high fever, severe cough, and in one case difficulty breathing requiring supplemental oxygen — were more serious than previously reported and are consistent with either COVID-19 or severe seasonal influenza. Previous disclosures had characterized the illnesses as minor.
+
+Two U.S. intelligence officials, speaking on condition of anonymity, told The New York Times that the new assessment was based partly on communications intercepts obtained by the National Security Agency in which a Wuhan Institute administrator discussed "ichang qingkuang" (abnormal situation) in the virology department in early November 2019.
+
+Separately, a database of viral sequences maintained by the Wuhan Institute was taken offline on September 12, 2019, approximately two months before the first known COVID cases. The Times has confirmed through archived web records that the database contained 22,257 entries cataloging bat coronaviruses collected from caves in Yunnan Province between 2012 and 2019. Chinese authorities have said the database was removed for security reasons.
+
+The intelligence community remains divided. Four agencies and the National Intelligence Council assess with low confidence that initial SARS-CoV-2 infection was most likely caused by natural exposure to an infected animal. One agency, believed to be the FBI, assesses with moderate confidence that the pandemic was most likely the result of a laboratory-associated incident.
+
+A senior administration official said President Biden has asked the intelligence community to "redouble their efforts" and report back within 90 days. China's Ministry of Foreign Affairs called the investigation "politically motivated" and demanded the United States "open Fort Detrick for inspection."

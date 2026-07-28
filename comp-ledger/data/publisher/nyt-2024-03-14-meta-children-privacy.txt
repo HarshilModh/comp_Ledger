@@ -1,0 +1,19 @@
+Internal Meta Documents Show Company Knew Instagram Harmed Teens, Weakened Safeguards
+By Sheera Frenkel and Cecilia Kang
+Source: https://www.nytimes.com/2024/03/14/technology/meta-instagram-teens-internal-documents.html
+---
+Internal Meta documents obtained by The New York Times through a former employee reveal that the company systematically weakened safety features designed to protect teenage users on Instagram after determining that the protections reduced daily engagement by approximately 8 percent among users aged 13 to 17.
+
+The documents, comprising 147 pages of internal presentations, research summaries, and executive correspondence from 2021 and 2022, show that Meta's leadership made deliberate decisions to prioritize growth metrics over adolescent safety, contradicting public statements by CEO Mark Zuckerberg and other executives.
+
+A presentation delivered to Meta's Growth Team on March 8, 2022, titled "Teen Engagement Recovery Plan," explicitly states: "Safety interventions implemented in Q4 2021 reduced teen DAUs by 4.1% and time-spent by 8.3%. This document proposes modifications to restore growth while maintaining regulatory defensibility." The presentation was authored by a product director identified as Rachel Chen and approved by Vice President of Product Naomi Gleit.
+
+Among the modifications implemented: the algorithmic "break reminder" feature, publicly announced in December 2021 as a tool to help teens manage screen time, was reconfigured in February 2022 to appear only after 30 consecutive minutes of use, up from 10 minutes in the original design. Internal testing showed the change reduced reminder appearances by 73 percent.
+
+The documents also reveal that Meta's internal research team, known as the Foundational Integrity team, conducted a longitudinal study of 2,347 teenage users between September 2021 and March 2022 that found "statistically significant correlations between daily Instagram usage exceeding 3 hours and self-reported increases in anxiety (r=0.34), body dissatisfaction (r=0.41), and sleep disruption (r=0.38)."
+
+A senior researcher on the study, Dr. Arturo Bejar, wrote in an internal memo on April 12, 2022: "We cannot in good conscience continue to optimize for engagement in this demographic without implementing meaningful guardrails. The data is unambiguous." Dr. Bejar left the company in November 2022 and subsequently testified before Congress.
+
+Meta spokesperson Andy Stone said in a statement that the company "invests billions in safety" and that "cherry-picked documents do not reflect our comprehensive approach to teen safety." He added that Meta had implemented more than 30 features designed to protect young users since 2022.
+
+The documents were provided to attorneys general in 42 states who are pursuing litigation against Meta over its effects on children's mental health. The cases are consolidated in federal court in Oakland, California, with trial scheduled for October 2025.

@@ -1,0 +1,19 @@
+Classified Report Reveals Intelligence Gaps That May Never Be Closed on COVID Origins
+By Julian Barnes and Adam Entous
+Source: https://www.nytimes.com/2024/01/15/us/politics/covid-origins-intelligence-gaps.html
+---
+A comprehensive classified review completed by the Office of the Director of National Intelligence in December 2023 concludes that the U.S. intelligence community is unlikely ever to determine with certainty how the COVID-19 pandemic began, owing to China's refusal to cooperate and fundamental gaps in collection capabilities, according to four officials who have read the document.
+
+The 143-page report, titled "Assessment of Intelligence Regarding the Origins of SARS-CoV-2: Final Analytic Review," was delivered to the White House on December 8, 2023, and to the intelligence committees of both chambers of Congress the following week. It represents the most exhaustive accounting to date of what the U.S. knows and does not know about the pandemic's beginnings.
+
+Among the report's key findings: the intelligence community possesses only six confirmed pieces of signals intelligence from within the Wuhan Institute of Virology's research operations, all from the period between September 2019 and January 2020. None directly references a laboratory accident or a specific infected researcher. The most significant intercept, dated November 12, 2019, records a senior administrator requesting an emergency budget allocation of 1.2 million yuan (approximately $168,000) for "laboratory safety remediation."
+
+The review also reveals that the CIA conducted a covert operation between 2021 and 2022, code-named MINERVA, that attempted to recruit sources within the Wuhan Institute and the Chinese Academy of Sciences. The operation produced one sub-source who provided secondhand information about "unusual safety protocols" implemented in October 2019 but was unable to provide documentary evidence.
+
+Human intelligence from China has degraded significantly since 2017, when Beijing dismantled a CIA network of informants, the report notes. Between 2018 and 2023, the agency's reporting from Chinese scientific institutions declined by approximately 72 percent.
+
+The report identifies 11 "critical intelligence gaps," including: the complete medical records of Wuhan Institute staff from September through December 2019; the contents of the institute's offline virus database; samples from the earliest known human cases; and records from the Wuhan blood bank covering October and November 2019, which Chinese authorities sealed in February 2020.
+
+Director of National Intelligence Avril Haines declined to comment on the classified report but said in a public statement that her office "continues to assess all available information regarding COVID-19 origins."
+
+The Chinese Embassy in Washington called the intelligence review "a continuation of political manipulation disguised as science" and reiterated demands for investigation of U.S. biological research facilities.

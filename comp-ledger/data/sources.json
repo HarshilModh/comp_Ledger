@@ -1,0 +1,50 @@
+{
+  "publisher": [
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-scotus-undisclosed-luxury-travel-gifts-crow",
+      "slug": "propublica-2023-04-06-clarence-thomas-luxury-travel"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-harlan-crow-real-estate-scotus",
+      "slug": "propublica-2023-04-13-thomas-real-estate-deal"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-harlan-crow-private-school-tuition-scotus",
+      "slug": "propublica-2023-05-04-thomas-tuition-payments"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-disclosure-filing-harlan-crow-real-estate-travel-scotus",
+      "slug": "propublica-2023-08-thomas-disclosure-filing"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-gift-disclosures-harlan-crow",
+      "slug": "propublica-2023-thomas-gift-disclosures"
+    }
+  ],
+  "reference": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Clarence_Thomas",
+      "slug": "wikipedia-clarence-thomas"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Harlan_Crow",
+      "slug": "wikipedia-harlan-crow"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-harlan-crow-investigation-origins",
+      "slug": "propublica-2023-investigation-origins-background"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-other-billionaires-sokol-huizenga-novelly-supreme-court",
+      "slug": "propublica-2023-thomas-other-billionaires"
+    },
+    {
+      "url": "https://www.propublica.org/article/clarence-thomas-koch-network-trips-disclosure-law-scotus",
+      "slug": "propublica-2023-thomas-koch-network"
+    },
+    {
+      "url": "https://www.propublica.org/article/harlan-crow-slashed-tax-bill-clarence-thomas-superyacht",
+      "slug": "propublica-2023-crow-tax-bill-superyacht"
+    }
+  ]
+}

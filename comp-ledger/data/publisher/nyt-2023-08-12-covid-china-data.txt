@@ -1,0 +1,19 @@
+China Deleted Critical Early COVID Data From Global Database, Researchers Find
+By Benjamin Mueller and Carl Zimmer
+Source: https://www.nytimes.com/2023/08/12/science/covid-china-deleted-data.html
+---
+Chinese researchers uploaded, then quietly deleted, crucial genetic sequences from early COVID-19 cases from an international database in June 2020, obscuring information that could have helped determine how the pandemic began, according to a reconstruction by scientists who recovered the deleted files.
+
+The deleted data, comprising 241 partial SARS-CoV-2 sequences collected between December 2019 and February 2020, was originally submitted to the Sequence Read Archive maintained by the National Institutes of Health. The sequences were uploaded on June 16, 2020, by researchers at Wuhan University and removed at their request on June 23 — just seven days later.
+
+Dr. Jesse Bloom, a virologist at the Fred Hutchinson Cancer Center in Seattle, recovered 34 of the deleted sequences from cloud-based caches and published his findings. But a broader effort by an international consortium, details of which are reported here for the first time, has now recovered 187 of the 241 sequences through a combination of archived data and computational reconstruction.
+
+The recovered sequences include 13 samples from patients who fell ill before December 20, 2019 — earlier than any cases in China's official timeline. Three of these sequences show genetic diversity suggesting the virus had been circulating in humans for at least several weeks before the first recognized cluster at the Huanan market.
+
+"These sequences are not from the market lineage," said Dr. Bloom in an interview with The Times. "They represent an earlier stage of viral evolution, which means the market was probably a superspreading event, not the origin point."
+
+The molecular clock analysis conducted by the consortium estimates that the most recent common ancestor of all known SARS-CoV-2 sequences dates to approximately October 18, 2019, with a 95 percent confidence interval spanning September 29 to November 7. This is consistent with earlier estimates but is now supported by a larger dataset.
+
+Chinese authorities have not explained why the sequences were deleted. Dr. Aisi Fu of Wuhan University, who submitted the original data, told The Times in an email that "the sequences were removed because the paper describing them had not yet been published" and that their deletion followed standard academic practice.
+
+NIH confirmed that the sequences were deleted at the submitter's request and that it complied with its standard policies. "We cannot compel researchers to maintain their submissions," a spokesperson said. The incident has fueled calls for reform of international data-sharing protocols during health emergencies.

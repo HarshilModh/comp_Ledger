@@ -1,0 +1,17 @@
+Energy Department Shifts to Lab Leak Theory, Citing New Intelligence on Wuhan Research
+By Julian Barnes, David Sanger and Edward Wong
+Source: https://www.nytimes.com/2023/03/01/us/politics/energy-department-covid-lab-leak.html
+---
+The U.S. Department of Energy has concluded that the COVID-19 pandemic most likely arose from a laboratory leak, a shift from its previous position of being undecided, according to a classified intelligence report updated in late January and provided to the White House and key members of Congress.
+
+The department's conclusion, made with "low confidence," was based in part on new intelligence about research activities at the Wuhan Institute of Virology in the months before the pandemic, according to three officials familiar with the assessment. The department joins the FBI, which reached a similar conclusion in 2021 with "moderate confidence."
+
+The Energy Department's reassessment carries particular weight because it oversees a network of 17 national laboratories, several of which conduct advanced biological research and employ scientists with deep expertise in virology and biosafety. Lawrence Livermore National Laboratory's "Z Division," which specializes in intelligence analysis, prepared the technical assessment that informed the department's conclusion.
+
+According to officials briefed on the intelligence, the Z Division analysis focused on three pieces of evidence not previously made public. First, satellite imagery showing unusual patterns of vehicle traffic near the Wuhan Institute's BSL-4 laboratory between October 14 and October 19, 2019, including what analysts assessed to be a decontamination vehicle. Second, intercepted communications in which a senior institute official referenced "a situation" requiring consultation with the Chinese Academy of Sciences in Beijing. Third, technical analysis of the SARS-CoV-2 genome suggesting the virus's furin cleavage site had characteristics more consistent with laboratory manipulation than natural evolution.
+
+The genomic analysis examined the specific nucleotide sequence encoding the furin cleavage site — a 12-nucleotide insertion at the S1/S2 boundary of the spike protein. Livermore analysts noted that the codon usage in this insertion (CGG-CGG for the arginine pair) is rare in SARS-related coronaviruses but common in sequences optimized for expression in human cell cultures.
+
+Other intelligence agencies remain divided. The CIA and the Office of the Director of National Intelligence have not changed their assessments that both natural spillover and a laboratory incident remain plausible. Four agencies continue to assess natural transmission as more likely.
+
+Jake Sullivan, the White House national security adviser, said in a statement: "There is not a consensus right now in the U.S. government about what the origins are." China's government dismissed the assessment as "political manipulation."

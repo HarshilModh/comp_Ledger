@@ -1,0 +1,19 @@
+Inside the Chaotic Weekend That Nearly Destroyed OpenAI
+By Cade Metz, Karen Weise and Mike Isaac
+Source: https://www.nytimes.com/2023/11/18/technology/openai-sam-altman-fired-board.html
+---
+On the morning of Friday, November 17, Sam Altman sat in a Google Meet call with the four independent members of OpenAI's board of directors. At 12:19 p.m. Pacific time, board chair Ilya Sutskever told Mr. Altman that he was being removed as chief executive, effective immediately, according to three people briefed on the call. The conversation lasted less than four minutes.
+
+What followed was 72 hours of chaos that exposed fractures at the heart of the world's most influential artificial intelligence company and raised fundamental questions about who should control the technology that many believe will reshape civilization.
+
+The board's decision had been forming for months. Internal documents reviewed by The New York Times show that tensions between Mr. Altman and Dr. Sutskever dated to at least July 2023, when Dr. Sutskever presented a safety assessment to the board warning that GPT-5's training run, projected to begin in January 2024, posed risks the company was not adequately prepared to manage. The assessment, titled "Capability Thresholds and Organizational Readiness," argued that OpenAI's safety team, then numbering 37 researchers, was inadequate for evaluating a model that internal benchmarks projected would exceed human performance on 94 percent of tested professional tasks.
+
+Mr. Altman, according to board minutes from a July 28 meeting, responded that "the safety team will scale with the model" and proposed a $50 million increase in safety research spending. Dr. Sutskever characterized this as insufficient in a follow-up memo on August 3, writing: "We are building God. The question is whether we are building a god that loves us."
+
+The immediate trigger for the firing, according to five people with direct knowledge of the deliberations, was not a single incident but an accumulation of concerns. Board member Helen Toner had flagged discrepancies in information Mr. Altman provided about a side investment in a chip startup. Board member Tasha McCauley raised concerns about Mr. Altman's involvement in a separate venture fund. And Dr. Sutskever had grown alarmed by what he viewed as Mr. Altman's acceleration of commercial deployment at the expense of safety research.
+
+By Saturday morning, 593 of OpenAI's 770 employees had signed a letter threatening to follow Mr. Altman to Microsoft if the board did not reverse its decision. The letter's signatories included Dr. Sutskever himself, who experienced what colleagues described as a change of heart overnight.
+
+Mr. Altman was reinstated on Tuesday, November 21. The board was reconstituted with Bret Taylor as chair. Dr. Sutskever did not return to his role as chief scientist.
+
+OpenAI declined to comment beyond its public statements.

@@ -1,0 +1,18 @@
+COVID Origins: Three Years On, Science Still Has No Definitive Answer
+Ian Sample | The Guardian
+---
+More than three years after COVID-19 emerged in Wuhan, the scientific community remains divided on whether the virus jumped naturally from animals to humans or escaped from a laboratory, with the debate increasingly shaped by politics as much as evidence.
+
+A series of competing scientific analyses published in recent months have reached different conclusions, often depending on their methodology and the weight given to circumstantial evidence. The lack of definitive proof for either hypothesis has allowed the debate to persist and intensify.
+
+Proponents of the natural origin theory point to the virus's genetic characteristics, which they say are consistent with natural evolution, and to the history of previous coronavirus outbreaks originating in animal populations. They note that no direct evidence of a lab leak -- such as records of the virus in a laboratory before the outbreak -- has emerged.
+
+Those favoring the lab leak hypothesis cite the proximity of the Wuhan Institute of Virology, which conducted extensive research on bat coronaviruses, to the outbreak's epicenter. They also point to reports that several researchers at the institute fell ill in November 2019, though the nature and significance of those illnesses remains disputed.
+
+"We're in an unusual situation where absence of evidence is being used to support both sides," said a virologist at University College London. "The natural origin camp says there's no evidence of a lab leak, and the lab leak camp says there's no evidence of a natural intermediate host."
+
+China's refusal to grant full access to international investigators has frustrated both camps. Key data that could resolve the question -- including early blood samples from Wuhan, a full database of viruses held at the institute, and records of research conducted there -- remain inaccessible.
+
+The WHO has proposed a new advisory group to continue investigating, but progress has been slow. Several scientists who participated in early investigations have expressed frustration with the politicization of the inquiry.
+
+Meanwhile, the debate has had practical consequences for science policy, with increased scrutiny of gain-of-function research and new proposals for oversight of potentially dangerous virology experiments. Both Republicans and Democrats in Congress have called for stricter regulations, though they disagree on other aspects of pandemic accountability.

@@ -1,0 +1,17 @@
+Genetic Analysis of Wuhan Market Samples Points to Raccoon Dogs as Potential Intermediary
+By Carl Zimmer and Benjamin Mueller
+Source: https://www.nytimes.com/2022/02/26/science/covid-origins-wuhan-market-raccoon-dogs.html
+---
+An international team of scientists has found genetic evidence linking raccoon dogs sold at the Huanan Seafood Market in Wuhan, China, to the earliest known outbreak of COVID-19, providing the strongest evidence yet that the pandemic began through natural spillover from animals to humans.
+
+The analysis, shared exclusively with The New York Times before its publication, examines 457 environmental swabs collected from the market by Chinese researchers in January 2020. Of these, 73 tested positive for SARS-CoV-2 RNA. The team's crucial finding is that in 12 samples from a cluster of stalls in the market's southwest corner, viral genetic material was intermingled with DNA from raccoon dogs (Nyctereutes procyonoides) at concentrations suggesting active viral shedding rather than surface contamination.
+
+The stalls in question — identified in market records as positions C14, C15, C16, and D12 — were operated by vendors who sourced live animals from farms in Hubei and Yunnan provinces. Records obtained by the research team show that a shipment of 47 raccoon dogs arrived at the market on November 24, 2019, approximately two weeks before the first cluster of pneumonia cases was reported to Wuhan health authorities on December 8.
+
+"This is not proof, but it is the most compelling circumstantial evidence we have," said Dr. Florence Debarre, an evolutionary biologist at the French National Centre for Scientific Research who participated in the analysis. "The co-occurrence of high viral loads with raccoon dog DNA in the same physical locations, at the same time as the earliest human cases, is difficult to explain through contamination alone."
+
+The spatial analysis conducted by the team maps each positive sample to within 1.5 meters of its collection site. The results show two distinct clusters of early human cases, both centered on the southwest section of the market where live mammals were sold. The first confirmed patient with no market connection fell ill on December 11, 2019, and lived 3.4 kilometers from the market.
+
+Chinese authorities have disputed the analysis, stating that the market samples prove only that infected humans contaminated surfaces. Dr. George Gao, former director of the Chinese Center for Disease Control and Prevention, said in a statement that "no animal at the market tested positive for the virus."
+
+The research team acknowledged that their findings cannot definitively rule out the possibility that infected humans deposited the virus alongside raccoon dog DNA. But Dr. Michael Worobey of the University of Arizona, a co-author, said the statistical probability of such co-occurrence arising by chance was less than 0.3 percent.

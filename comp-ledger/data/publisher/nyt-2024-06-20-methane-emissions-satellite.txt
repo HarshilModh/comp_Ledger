@@ -1,0 +1,21 @@
+Satellite Data Reveals Methane Emissions From Oil Fields Are Triple Official Estimates
+By Hiroko Tabuchi and Jonah Kessel
+Source: https://www.nytimes.com/2024/06/20/climate/methane-emissions-satellite-oil-gas.html
+---
+Satellite observations of methane emissions from America's largest oil and gas producing regions show that actual emissions are approximately three times higher than what companies report to the Environmental Protection Agency, according to a New York Times analysis of data from the MethaneSAT orbital instrument launched in March 2024.
+
+The analysis, conducted in collaboration with the Environmental Defense Fund, which operates MethaneSAT, examined emissions from the Permian Basin in Texas and New Mexico, the Bakken formation in North Dakota, and the Appalachian Basin spanning Pennsylvania, West Virginia, and Ohio. Over a 60-day observation period from April 1 to May 31, 2024, the satellite detected methane plumes totaling approximately 18.7 million metric tons annualized, compared to the 6.2 million metric tons reported to the EPA from the same regions.
+
+The Permian Basin alone accounted for 11.3 million metric tons of annualized methane emissions — equivalent, in warming impact, to the annual CO2 output of 72 coal-fired power plants. The largest single source detected was a cluster of facilities operated by a subsidiary of Pioneer Natural Resources (now merged with Exxon Mobil) in Loving County, Texas, emitting an estimated 847 metric tons of methane per hour during a 36-hour observation window on April 14-15. The emission rate suggests either a major equipment malfunction or deliberate venting.
+
+MethaneSAT's instrument, a shortwave infrared spectrometer operating at 1,630-1,680 nanometers with a spatial resolution of 100 meters by 400 meters, represents a quantum leap in monitoring capability. Previous satellites could detect only "super-emitter" events releasing more than 25 metric tons per hour. MethaneSAT's detection threshold of 2 metric tons per hour enables it to identify thousands of smaller but chronic emission sources that collectively dwarf the super-emitter events.
+
+"What we're seeing is that the emissions inventory is fundamentally broken," said Dr. Steven Hamburg, chief scientist at the Environmental Defense Fund. "Companies are reporting based on engineering calculations and emission factors that bear little relationship to what's actually going into the atmosphere."
+
+The EPA's greenhouse gas reporting program relies largely on self-reported data from operators, who estimate emissions using standardized "emission factors" that assume equipment is functioning properly. Satellite data reveals that equipment malfunctions, stuck valves, and unlit flares — which are supposed to combust methane before it reaches the atmosphere — are far more common than assumed.
+
+The Times identified 2,347 individual emission events exceeding 5 metric tons per hour across the three basins during the observation period. Of these, only 214 were reported to state regulators as abnormal emissions events, suggesting that 91 percent of significant releases go unreported.
+
+Exxon Mobil said it "takes methane management seriously" and has invested $7 billion in emission-reduction technologies. The American Petroleum Institute said the industry has reduced methane intensity by 66 percent since 1990 and supports "smart, responsible methane regulation."
+
+The EPA finalized new methane rules in December 2023 requiring quarterly monitoring of large facilities, but the rules do not take full effect until 2027.

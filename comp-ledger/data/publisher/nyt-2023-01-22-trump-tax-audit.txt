@@ -1,0 +1,19 @@
+The IRS Audit That Haunts Trump: $72.9 Million at Stake
+By Susanne Craig and Mike McIntire
+Source: https://www.nytimes.com/2023/01/22/us/trump-irs-audit-refund.html
+---
+For more than a decade, Donald J. Trump has been fighting the Internal Revenue Service over a single tax maneuver that netted him a $72.9 million refund in 2010 — a battle whose outcome could require him to repay that sum with interest and penalties totaling more than $122 million, according to tax records and court filings reviewed by The New York Times.
+
+The dispute centers on Mr. Trump's decision in 2009 to abandon his stake in a failing Atlantic City casino partnership, claiming a loss of approximately $700 million that he used to wipe out his taxable income for the previous four years and obtain the refund. The IRS has argued since 2012 that the loss was artificially inflated because Mr. Trump had already used portions of the same losses in earlier tax years.
+
+Documents show that the audit advanced to a formal case file on March 14, 2012, assigned to senior examiner Carol Harding at the IRS's Large Business and International Division. The case was escalated to the agency's National Office in September 2015, where it has remained in a technical review known as a "pre-litigation holding pattern."
+
+The Times identified three specific elements the IRS has challenged. First, Mr. Trump's claim that he had a tax basis of $694 million in the partnership, Atlantic City Associates. IRS calculations put the actual basis at $196 million. Second, Mr. Trump's assertion that he abandoned the partnership interest on December 31, 2009, which the IRS disputes based on evidence that he continued to exercise control over certain partnership decisions through February 2010. Third, the allocation of $247 million in phantom income from forgiven debt, which Mr. Trump attributed to his partners rather than himself.
+
+Tax practitioners said the stakes are unusually high. "If the IRS prevails on even one of these three theories, the refund must be returned in full," said Monte Jackel, a former IRS attorney now in private practice. "With accumulated interest at the statutory rate of approximately 3 percent compounded annually, the total exposure would exceed $122 million."
+
+Congressional investigators on the House Ways and Means Committee, who obtained six years of Mr. Trump's returns under a federal statute, confirmed in December 2022 that the IRS had failed to conduct a mandatory audit of the president during his first two years in office, despite a longstanding policy of automatically auditing sitting presidents.
+
+The committee's report noted that the IRS did not assign an agent to Mr. Trump's 2016 return until April 3, 2019, more than two years into his presidency. The return showed income of $12.8 million and taxes paid of $750.
+
+Mr. Trump's legal team has argued that the loss was properly claimed under Section 165 of the tax code. A Trump spokesperson called the IRS position "politically motivated."

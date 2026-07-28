@@ -1,0 +1,19 @@
+Tech Giants Spent $957 Million Lobbying Against AI Regulation in 18 Months
+By Cecilia Kang and David McCabe
+Source: https://www.nytimes.com/2024/06/08/technology/ai-lobbying-regulation-spending.html
+---
+The nation's largest technology companies spent a combined $957 million on lobbying efforts related to artificial intelligence regulation between January 2023 and June 2024, a New York Times analysis of federal and state disclosure records shows, dwarfing spending by consumer advocacy groups by a ratio of approximately 83 to 1.
+
+The analysis examined lobbying disclosures filed with Congress, the 50 state legislatures, and the European Union, as well as contributions to industry-funded research organizations that produce policy papers and public testimony. Google led all companies with $214 million in AI-related lobbying expenditures, followed by Microsoft at $187 million, Meta at $156 million, Amazon at $142 million, and OpenAI at $78 million.
+
+The spending surge coincided with a wave of proposed AI legislation at both federal and state levels. Since January 2023, 847 AI-related bills have been introduced in state legislatures and 67 in Congress, according to a database maintained by the Brennan Center for Justice. Of these, only 14 state bills and zero federal bills have been signed into law.
+
+Industry lobbying has focused on three primary strategies, according to internal planning documents from the Information Technology Industry Foundation obtained by The Times. First, promoting voluntary commitments over binding regulation — exemplified by the White House AI commitments signed in July 2023. Second, advocating for federal preemption of state laws, which would replace a patchwork of strict state regulations with a single, potentially weaker federal standard. Third, framing open-source AI regulation as a threat to innovation and national security.
+
+A planning memo dated February 14, 2024, authored by ITIF president Robert Atkinson, states: "Our primary objective in Q1-Q2 is to ensure that the bipartisan Senate AI framework does not include mandatory pre-deployment testing requirements. Budget: $12M for direct Hill engagement, $8M for academic partnerships, $4M for media outreach."
+
+Consumer and civil rights organizations, by contrast, spent approximately $11.5 million on AI policy advocacy during the same period. The Center for AI Safety, the Electronic Frontier Foundation, and the AI Now Institute were the largest spenders among advocacy groups.
+
+Senator Richard Blumenthal, who co-chairs the Senate AI caucus, said the spending disparity was "staggering but not surprising. The industry has every incentive to shape the rules before they're written, and they have the resources to do it at a scale that public interest groups cannot match."
+
+A spokesperson for the ITIF called The Times's analysis "misleading" and said the organization "advocates for evidence-based policy that promotes innovation while addressing legitimate concerns about AI safety."

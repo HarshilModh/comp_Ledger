@@ -1,0 +1,18 @@
+Congress Struggles to Keep Pace With AI as Industry Races Ahead
+Matt O'Brien | Associated Press
+---
+More than a year after ChatGPT ignited public fascination with artificial intelligence, Congress has yet to pass major legislation governing the technology, even as companies deploy increasingly powerful systems with minimal oversight.
+
+Lawmakers from both parties acknowledge the urgency of AI regulation but remain divided on approach. Some favor comprehensive federal legislation, while others prefer a sectoral approach that would task existing agencies with oversight in their respective domains. A handful oppose regulation entirely, arguing it would stifle American innovation and cede ground to China.
+
+"We're watching the most transformative technology of our lifetimes develop without guardrails," said Senate Majority Leader Chuck Schumer, who has organized a series of "AI insight forums" bringing together industry leaders, civil society groups, and researchers. "But getting the policy right matters more than getting it fast."
+
+The forums produced broad agreement on principles -- transparency, accountability, security -- but have not yet yielded specific legislative proposals. Critics say the sessions have been dominated by industry voices with a financial interest in light-touch regulation.
+
+Meanwhile, the European Union has moved ahead with its AI Act, a comprehensive regulatory framework that categorizes AI systems by risk level and imposes requirements accordingly. Industry groups have warned that a patchwork of state-level regulations could emerge if Congress fails to act.
+
+Several AI-related bills have been introduced but none has advanced significantly. Proposals range from requiring disclosure when AI is used to generate content to establishing a new federal agency dedicated to AI oversight.
+
+The Biden administration has taken executive action, including an October executive order that requires AI companies to share safety test results with the government and directs agencies to develop standards. However, executive orders can be reversed by future administrations and lack the permanence of legislation.
+
+Industry leaders have offered varying levels of support for regulation. Some, including OpenAI CEO Sam Altman, have testified in favor of oversight while advocating for approaches that would not disadvantage established players.

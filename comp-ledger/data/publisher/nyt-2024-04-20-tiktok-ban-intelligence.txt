@@ -1,0 +1,21 @@
+Classified Briefing Detailed TikTok's Data Practices, Swaying Skeptical Lawmakers
+By Sapna Maheshwari and David McCabe
+Source: https://www.nytimes.com/2024/04/20/technology/tiktok-ban-classified-briefing.html
+---
+In the weeks before Congress voted to force the sale or ban of TikTok, lawmakers received a series of classified briefings that presented intelligence showing the app's Chinese parent company, ByteDance, had accessed American user data far more extensively than previously disclosed, according to six members of Congress and three congressional staff members who attended the sessions.
+
+The briefings, conducted by the FBI and the Office of the Director of National Intelligence between February 12 and March 8, 2024, included specific examples of ByteDance employees in Beijing accessing data on American users without authorization from TikTok's U.S. operations, the officials said.
+
+One briefing slide, described by three attendees, showed that ByteDance engineers accessed geolocation data from 14.7 million American TikTok users between January and August 2023, routing the queries through an internal tool called "Engineer Access Portal" that bypassed the data governance controls TikTok had established under its $1.5 billion "Project Texas" agreement with Oracle Corporation.
+
+"When I saw those numbers, I understood why this had to happen," said Representative Raja Krishnamoorthi, Democrat of Illinois, who co-sponsored the legislation. "The scope of unauthorized access was not what any of us expected."
+
+Another exhibit presented during the March 1 briefing showed that ByteDance's recommendation algorithm for TikTok's U.S. users was updated 347 times between March 2023 and January 2024 from servers in Beijing, contradicting TikTok's assertions that its American content recommendation system operated independently of its Chinese parent.
+
+The briefings also included intelligence suggesting that the Chinese government had requested data on specific American users on at least three occasions between 2020 and 2023. Intelligence officials declined to specify the nature of the requests or whether ByteDance complied, citing ongoing collection operations.
+
+TikTok spokesperson Alex Haurek called the characterization "fundamentally misleading" and said: "Project Texas was specifically designed to prevent unauthorized access to U.S. user data, and any incidents that occurred were promptly identified and remediated through our security protocols." He added that TikTok had never provided user data to the Chinese government.
+
+The House passed the forced-sale legislation on March 13 by a vote of 352-65. The Senate included it in a supplemental appropriations package signed by President Biden on April 24. TikTok has challenged the law in federal court, arguing it violates the First Amendment.
+
+Oracle declined to comment on whether its monitoring systems detected the unauthorized access described in the intelligence briefings. ByteDance has said it will fight the divestiture requirement and has until January 19, 2025, to complete a sale or face a ban from U.S. app stores.

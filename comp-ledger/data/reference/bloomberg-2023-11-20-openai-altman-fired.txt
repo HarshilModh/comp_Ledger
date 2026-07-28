@@ -1,0 +1,16 @@
+OpenAI Board Fires CEO Sam Altman in Shock Move
+Rachel Metz and Shirin Ghaffary | Bloomberg
+---
+OpenAI's board of directors fired CEO Sam Altman on Friday in a stunning move that has thrown the artificial intelligence industry into turmoil, with employees reportedly threatening mass resignation unless the board reverses course.
+
+The board said in a statement that Altman "was not consistently candid in his communications with the board," but provided no specific details about what triggered the decision. The abrupt announcement sent shockwaves through Silicon Valley, where OpenAI has become one of the most prominent and valuable technology companies.
+
+President Greg Brockman, who was stripped of his board chairmanship as part of the shakeup, subsequently resigned from the company. Chief Technology Officer Mira Murati was named interim CEO before being replaced days later by former Twitch CEO Emmett Shear.
+
+The firing triggered an extraordinary corporate drama that played out largely in public. Within days, more than 700 of OpenAI's approximately 770 employees signed a letter threatening to leave unless the board resigned and reinstated Altman. Microsoft, which has invested billions in OpenAI, quickly offered Altman and Brockman positions to lead a new AI research unit.
+
+Reports suggest the board's decision was related to concerns about the pace of AI development and commercialization under Altman's leadership, though the exact nature of the disagreements remains unclear. Some reports indicated that board members worried about safety considerations being deprioritized.
+
+The situation remains fluid as negotiations continue between various factions. Industry observers say the outcome will have significant implications for AI development and governance, regardless of whether Altman returns to OpenAI or builds a competing effort at Microsoft.
+
+The episode has highlighted tensions within the AI field between those who favor rapid commercial deployment and those who advocate for more cautious approaches to increasingly powerful systems. OpenAI was originally founded as a nonprofit research laboratory before restructuring to attract commercial investment.
