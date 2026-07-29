@@ -1,0 +1,112 @@
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const dir = dirname(fileURLToPath(import.meta.url));
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    `${dir}/index.html`,
+    `${dir}/src/**/*.{js,jsx}`,
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        "on-background": "var(--on-background)",
+        "primary-fixed": "var(--primary-fixed)",
+        "surface-container": "var(--surface-container)",
+        "on-surface-variant": "var(--on-surface-variant)",
+        "on-error-container": "var(--on-error-container)",
+        "outline": "var(--outline)",
+        "secondary-fixed-dim": "var(--secondary-fixed-dim)",
+        "surface-tint": "var(--surface-tint)",
+        "error": "var(--error)",
+        "outline-variant": "var(--outline-variant)",
+        "inverse-surface": "var(--inverse-surface)",
+        "error-container": "var(--error-container)",
+        "tertiary": "var(--tertiary)",
+        "surface-container-highest": "var(--surface-container-highest)",
+        "on-error": "var(--on-error)",
+        "surface": "var(--surface)",
+        "surface-variant": "var(--surface-variant)",
+        "on-tertiary": "var(--on-tertiary)",
+        "on-tertiary-container": "var(--on-tertiary-container)",
+        "background": "var(--background)",
+        "primary-fixed-dim": "var(--primary-fixed-dim)",
+        "on-primary-container": "var(--on-primary-container)",
+        "on-primary-fixed-variant": "var(--on-primary-fixed-variant)",
+        "primary": "var(--primary)",
+        "secondary-container": "var(--secondary-container)",
+        "inverse-on-surface": "var(--inverse-on-surface)",
+        "primary-container": "var(--primary-container)",
+        "on-secondary-container": "var(--on-secondary-container)",
+        "surface-dim": "var(--surface-dim)",
+        "surface-container-lowest": "var(--surface-container-lowest)",
+        "surface-container-low": "var(--surface-container-low)",
+        "surface-bright": "var(--surface-bright)",
+        "inverse-primary": "var(--inverse-primary)",
+        "tertiary-container": "var(--tertiary-container)",
+        "on-secondary": "var(--on-secondary)",
+        "surface-container-high": "var(--surface-container-high)",
+        "on-surface": "var(--on-surface)",
+        "secondary": "var(--secondary)",
+        "on-primary": "var(--on-primary)",
+        "tertiary-fixed-dim": "var(--tertiary-fixed-dim)",
+        "secondary-fixed": "var(--secondary-fixed)",
+      },
+      borderRadius: {
+        DEFAULT: "0.375rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        "2xl": "1rem",
+        full: "9999px",
+      },
+      spacing: {
+        sm: "8px",
+        xs: "4px",
+        "sidebar-width": "260px",
+        gutter: "16px",
+        lg: "24px",
+        unit: "4px",
+        md: "16px",
+        xl: "40px",
+      },
+      fontFamily: {
+        display: ["Geist", "sans-serif"],
+        code: ["JetBrains Mono", "monospace"],
+        sans: ["Geist", "sans-serif"],
+      },
+      fontSize: {
+        display: ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        code: ["13px", { lineHeight: "20px", fontWeight: "400" }],
+        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "label-md": ["13px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+        "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+        "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+      },
+      boxShadow: {
+        'sm': '0 1px 3px rgba(0, 0, 0, 0.06)',
+        'card': '0 2px 8px rgba(0, 0, 0, 0.04)',
+        'elevated': '0 4px 16px rgba(0, 0, 0, 0.08)',
+      },
+      animation: {
+        'fade-in': 'fade-in 0.4s ease forwards',
+        'slide-up': 'slide-up 0.4s ease forwards',
+      },
+      keyframes: {
+        'fade-in': {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+        'slide-up': {
+          from: { opacity: '0', transform: 'translateY(8px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+};

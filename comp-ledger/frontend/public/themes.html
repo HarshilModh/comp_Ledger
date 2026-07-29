@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose your color scheme — Comp Ledger</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f1f3f5;
+      color: #1a1a2e;
+      padding: 48px 32px 80px;
+      min-height: 100vh;
+    }
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #111;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 0.9375rem;
+      color: #666;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+      gap: 32px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    .scheme-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .scheme-meta {
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .scheme-name {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.01em;
+    }
+    .scheme-tag {
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .scheme-current {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #999;
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-left: auto;
+    }
+    .previews {
+      display: flex;
+    }
+    .preview-half {
+      flex: 1;
+      position: relative;
+    }
+    .preview-half + .preview-half {
+      border-left: 2px solid rgba(255,255,255,0.15);
+    }
+    .mode-label {
+      position: absolute;
+      top: 7px;
+      right: 9px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Choose your color scheme</h1>
+  <p>Each card shows light mode (left) and dark mode (right) side by side. Pick the palette that feels right for the app.</p>
+</header>
+
+<div class="grid">
+
+  <!-- ══════════════════════════════════════════════════════════
+       1. EDITORIAL (current)
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Editorial</span>
+      <span class="scheme-tag">Bold &amp; journalistic</span>
+      <span class="scheme-current">Current</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#fafaf8; display:flex; height:180px;">
+        <span class="mode-label" style="color:#111;">Light</span>
+        <!-- Sidebar -->
+        <div style="width:52px; background:#f0eeec; border-right:1px solid #e4e1de; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#c41e3a; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#c41e3a; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#c8c3be; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#c8c3be; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#c8c3be; border-radius:2px;"></div>
+        </div>
+        <!-- Main -->
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <!-- Stat card -->
+          <div style="background:#fff; border:1px solid #ece9e6; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#111111; line-height:1;">142</div>
+            <div style="font-size:9px; color:#888; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <!-- Button + Badge row -->
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#c41e3a; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#fde8eb; color:#c41e3a; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <!-- Table row -->
+          <div style="background:#fff; border:1px solid #ece9e6; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#c41e3a; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#111; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#888; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#100c0a; display:flex; height:180px;">
+        <span class="mode-label" style="color:#e05a6b;">Dark</span>
+        <!-- Sidebar -->
+        <div style="width:52px; background:#1a1210; border-right:1px solid #2a201c; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#e05a6b; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#e05a6b; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#3a2e2a; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#3a2e2a; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#3a2e2a; border-radius:2px;"></div>
+        </div>
+        <!-- Main -->
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#1e1410; border:1px solid #2e221e; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#f0e8e6; line-height:1;">142</div>
+            <div style="font-size:9px; color:#7a6460; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#e05a6b; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#3d1218; color:#e05a6b; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#1e1410; border:1px solid #2e221e; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#e05a6b; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#d4c8c4; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#7a6460; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       2. MIDNIGHT
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Midnight</span>
+      <span class="scheme-tag">Authoritative &amp; cool</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#f8fafc; display:flex; height:180px;">
+        <span class="mode-label" style="color:#0f172a;">Light</span>
+        <div style="width:52px; background:#edf2f7; border-right:1px solid #dde4ed; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#1e3a5f; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#1e3a5f; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#b8c8d8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b8c8d8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b8c8d8; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #dde4ed; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#0f172a; line-height:1;">142</div>
+            <div style="font-size:9px; color:#8898aa; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#1e3a5f; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#dde8f5; color:#1e3a5f; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #dde4ed; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#1e3a5f; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#0f172a; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#8898aa; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#090e18; display:flex; height:180px;">
+        <span class="mode-label" style="color:#4d8bc9;">Dark</span>
+        <div style="width:52px; background:#0e1624; border-right:1px solid #1a2840; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#4d8bc9; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#4d8bc9; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#1e2e48; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#1e2e48; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#1e2e48; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#0e1624; border:1px solid #1a2840; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#e2eaf5; line-height:1;">142</div>
+            <div style="font-size:9px; color:#4a6080; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#4d8bc9; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#0e1e38; color:#4d8bc9; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#0e1624; border:1px solid #1a2840; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#4d8bc9; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#c8d8eb; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#4a6080; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       3. FOREST
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Forest</span>
+      <span class="scheme-tag">Natural &amp; trustworthy</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#fafaf7; display:flex; height:180px;">
+        <span class="mode-label" style="color:#14231a;">Light</span>
+        <div style="width:52px; background:#edf2ee; border-right:1px solid #d8e4da; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#166534; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#166534; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#b0c8b8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b0c8b8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b0c8b8; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #d8e4da; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#14231a; line-height:1;">142</div>
+            <div style="font-size:9px; color:#7a9880; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#166534; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#d8f0e0; color:#166534; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #d8e4da; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#166534; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#14231a; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#7a9880; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#080f0b; display:flex; height:180px;">
+        <span class="mode-label" style="color:#4ade80;">Dark</span>
+        <div style="width:52px; background:#0d1810; border-right:1px solid #162a1c; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#4ade80; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#4ade80; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#162a1c; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#162a1c; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#162a1c; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#0d1810; border:1px solid #162a1c; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#d4f0dc; line-height:1;">142</div>
+            <div style="font-size:9px; color:#3a6040; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#4ade80; color:#05200e; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#0a2e14; color:#4ade80; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#0d1810; border:1px solid #162a1c; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#4ade80; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#b8d8c0; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#3a6040; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       4. AMBER
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Amber</span>
+      <span class="scheme-tag">Warm &amp; investigative</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#fffbf5; display:flex; height:180px;">
+        <span class="mode-label" style="color:#1c1309;">Light</span>
+        <div style="width:52px; background:#f5ede0; border-right:1px solid #e8d8c0; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#b45309; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#b45309; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#d4b888; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#d4b888; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#d4b888; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #e8d8c0; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#1c1309; line-height:1;">142</div>
+            <div style="font-size:9px; color:#a07840; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#b45309; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#fef3e0; color:#b45309; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #e8d8c0; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#b45309; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#1c1309; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#a07840; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#120d05; display:flex; height:180px;">
+        <span class="mode-label" style="color:#fbbf24;">Dark</span>
+        <div style="width:52px; background:#1e1508; border-right:1px solid #302010; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#fbbf24; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#fbbf24; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#302010; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#302010; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#302010; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#1e1508; border:1px solid #302010; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#f5e8c8; line-height:1;">142</div>
+            <div style="font-size:9px; color:#785828; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#fbbf24; color:#1c0e00; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#3a2608; color:#fbbf24; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#1e1508; border:1px solid #302010; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#fbbf24; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#d8c898; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#785828; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       5. COBALT
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Cobalt</span>
+      <span class="scheme-tag">Crisp &amp; digital</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#f8faff; display:flex; height:180px;">
+        <span class="mode-label" style="color:#0f172a;">Light</span>
+        <div style="width:52px; background:#edf1fd; border-right:1px solid #d8e0f8; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#1d4ed8; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#1d4ed8; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#b0bde8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b0bde8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b0bde8; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #d8e0f8; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#0f172a; line-height:1;">142</div>
+            <div style="font-size:9px; color:#6880b8; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#1d4ed8; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#dce6fb; color:#1d4ed8; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #d8e0f8; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#1d4ed8; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#0f172a; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#6880b8; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#08091a; display:flex; height:180px;">
+        <span class="mode-label" style="color:#60a5fa;">Dark</span>
+        <div style="width:52px; background:#0e1028; border-right:1px solid #181a3c; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#60a5fa; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#60a5fa; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#181a3c; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#181a3c; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#181a3c; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#0e1028; border:1px solid #181a3c; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#d8e8ff; line-height:1;">142</div>
+            <div style="font-size:9px; color:#3848a0; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#60a5fa; color:#060820; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#0e1440; color:#60a5fa; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#0e1028; border:1px solid #181a3c; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#60a5fa; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#b0c8f0; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#3848a0; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       6. RUST
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Rust</span>
+      <span class="scheme-tag">Earthy &amp; independent</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#fffaf8; display:flex; height:180px;">
+        <span class="mode-label" style="color:#1c1008;">Light</span>
+        <div style="width:52px; background:#f5ece6; border-right:1px solid #e8d4ca; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#c2410c; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#c2410c; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#d8b8a8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#d8b8a8; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#d8b8a8; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #e8d4ca; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#1c1008; line-height:1;">142</div>
+            <div style="font-size:9px; color:#a07060; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#c2410c; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#fde8db; color:#c2410c; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #e8d4ca; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#c2410c; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#1c1008; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#a07060; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#120805; display:flex; height:180px;">
+        <span class="mode-label" style="color:#fb923c;">Dark</span>
+        <div style="width:52px; background:#1e1008; border-right:1px solid #301808; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#fb923c; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#fb923c; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#301808; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#301808; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#301808; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#1e1008; border:1px solid #301808; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#f5dcc8; line-height:1;">142</div>
+            <div style="font-size:9px; color:#784828; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#fb923c; color:#1c0800; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#3a1808; color:#fb923c; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#1e1008; border:1px solid #301808; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#fb923c; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#d8b890; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#784828; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       7. GRAPHITE
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Graphite</span>
+      <span class="scheme-tag">Minimal &amp; understated</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#f9fafb; display:flex; height:180px;">
+        <span class="mode-label" style="color:#111827;">Light</span>
+        <div style="width:52px; background:#eff1f3; border-right:1px solid #dde1e6; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#1f2937; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#1f2937; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#b8bcc4; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b8bcc4; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#b8bcc4; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #dde1e6; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#111827; line-height:1;">142</div>
+            <div style="font-size:9px; color:#6b7280; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#1f2937; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#e5e7eb; color:#1f2937; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #dde1e6; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#1f2937; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#111827; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#6b7280; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#0d1117; display:flex; height:180px;">
+        <span class="mode-label" style="color:#9ca3af;">Dark</span>
+        <div style="width:52px; background:#161b22; border-right:1px solid #21262d; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#9ca3af; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#9ca3af; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#21262d; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#21262d; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#21262d; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#161b22; border:1px solid #21262d; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#e2e8f0; line-height:1;">142</div>
+            <div style="font-size:9px; color:#4a5568; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#9ca3af; color:#0d1117; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#21262d; color:#9ca3af; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#161b22; border:1px solid #21262d; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#9ca3af; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#c4cad4; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#4a5568; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       8. TEAL
+       ══════════════════════════════════════════════════════════ -->
+  <div class="scheme-card">
+    <div class="scheme-meta">
+      <span class="scheme-name">Teal</span>
+      <span class="scheme-tag">Fresh &amp; analytical</span>
+    </div>
+    <div class="previews">
+      <!-- LIGHT -->
+      <div class="preview-half" style="background:#f7fafa; display:flex; height:180px;">
+        <span class="mode-label" style="color:#042f2e;">Light</span>
+        <div style="width:52px; background:#e8f5f4; border-right:1px solid #cce8e5; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#0f766e; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#0f766e; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#90c8c4; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#90c8c4; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#90c8c4; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#fff; border:1px solid #cce8e5; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#042f2e; line-height:1;">142</div>
+            <div style="font-size:9px; color:#4a9890; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#0f766e; color:#fff; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#d0f0ed; color:#0f766e; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#fff; border:1px solid #cce8e5; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#0f766e; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#042f2e; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#4a9890; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+      <!-- DARK -->
+      <div class="preview-half" style="background:#050f0e; display:flex; height:180px;">
+        <span class="mode-label" style="color:#2dd4bf;">Dark</span>
+        <div style="width:52px; background:#0a1c1a; border-right:1px solid #122e2a; display:flex; flex-direction:column; align-items:center; padding:12px 0; gap:8px; flex-shrink:0;">
+          <div style="width:22px; height:22px; background:#2dd4bf; border-radius:5px; margin-bottom:6px;"></div>
+          <div style="width:28px; height:5px; background:#2dd4bf; border-radius:2px; opacity:0.9;"></div>
+          <div style="width:28px; height:5px; background:#122e2a; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#122e2a; border-radius:2px;"></div>
+          <div style="width:28px; height:5px; background:#122e2a; border-radius:2px;"></div>
+        </div>
+        <div style="flex:1; padding:10px 11px 10px; display:flex; flex-direction:column; gap:8px; overflow:hidden;">
+          <div style="background:#0a1c1a; border:1px solid #122e2a; border-radius:6px; padding:7px 9px;">
+            <div style="font-size:17px; font-weight:700; color:#c4f0ec; line-height:1;">142</div>
+            <div style="font-size:9px; color:#286858; margin-top:2px; letter-spacing:0.03em; text-transform:uppercase;">Claims tracked</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:6px;">
+            <button style="background:#2dd4bf; color:#031210; border:none; border-radius:5px; font-size:9px; font-weight:600; padding:5px 10px; cursor:default; letter-spacing:0.03em;">Add Claim</button>
+            <span style="background:#0a2826; color:#2dd4bf; font-size:8px; font-weight:700; border-radius:10px; padding:2px 7px; letter-spacing:0.04em;">DISPUTED</span>
+          </div>
+          <div style="background:#0a1c1a; border:1px solid #122e2a; border-radius:5px; padding:5px 8px; display:flex; align-items:center; gap:6px;">
+            <div style="width:7px; height:7px; background:#2dd4bf; border-radius:50%; flex-shrink:0;"></div>
+            <div style="font-size:9px; color:#a0d8d2; font-weight:500; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">NYT · Jan 2024 · Climate report</div>
+            <div style="font-size:8px; color:#286858; white-space:nowrap;">$4.2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /grid -->
+
+</body>
+</html>

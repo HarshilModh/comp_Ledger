@@ -1,5 +1,8 @@
 node_modules/
-.env
-dist/
-data/index.json
-data/demo-fallback.json
+backend/node_modules/
+frontend/node_modules/
+backend/.env
+frontend/dist/
+frontend/.vite/
+backend/data/index.json
+backend/data/demo-fallback.json
