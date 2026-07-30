@@ -9,9 +9,11 @@ const navItems = [
   { icon: 'dashboard', label: 'Dashboard', path: '/dashboard' },
   { icon: 'description', label: 'Facts', path: '/facts' },
   { icon: 'compare', label: 'Compare', path: '/compare' },
+  { icon: 'travel_explore', label: 'Deep Research', path: '/deep-research' },
+  { icon: 'apartment', label: 'Publishers', path: '/publishers' },
 ];
 
-export function Sidebar({ collapsed, onToggle }) {
+export function Sidebar({ collapsed, onToggle, user, onLogout }) {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const w = collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_FULL;
@@ -55,6 +57,33 @@ export function Sidebar({ collapsed, onToggle }) {
       </nav>
 
       <div className={`mt-auto space-y-xs px-sm border-t border-outline-variant pt-md ${collapsed ? '' : 'mx-sm'}`}>
+        {/* User info */}
+        {user && !collapsed && (
+          <div className="flex items-center gap-sm px-md py-sm mb-xs rounded-xl" style={{ background: 'var(--surface-container-low)' }}>
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'var(--primary-fixed)' }}>
+              <span className="text-primary font-black" style={{ fontSize: 10 }}>
+                {(user.publication || user.name || 'U').slice(0, 2).toUpperCase()}
+              </span>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-label-sm font-bold text-on-surface truncate" style={{ fontSize: 11 }}>{user.publication || user.name}</p>
+              <p className="text-on-surface-variant truncate" style={{ fontSize: 10 }}>{user.role === 'admin' ? 'Admin' : 'Publisher'}</p>
+            </div>
+          </div>
+        )}
+        {user && collapsed && (
+          <div
+            title={user.publication || user.name}
+            className="flex items-center justify-center px-md py-sm mb-xs"
+          >
+            <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'var(--primary-fixed)' }}>
+              <span className="text-primary font-black" style={{ fontSize: 10 }}>
+                {(user.publication || user.name || 'U').slice(0, 2).toUpperCase()}
+              </span>
+            </div>
+          </div>
+        )}
+
         <ThemeToggleItem collapsed={collapsed} />
         <div
           onClick={() => navigate('/about')}
@@ -64,6 +93,16 @@ export function Sidebar({ collapsed, onToggle }) {
           <span className="material-symbols-outlined shrink-0" style={{ fontSize: 20 }}>auto_awesome</span>
           {!collapsed && <span className="text-label-md whitespace-nowrap">About</span>}
         </div>
+        {onLogout && (
+          <div
+            onClick={onLogout}
+            title={collapsed ? 'Sign Out' : undefined}
+            className={`flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high hover:text-error transition-all duration-200 cursor-pointer rounded-xl active:scale-95 ${collapsed ? 'justify-center' : ''}`}
+          >
+            <span className="material-symbols-outlined shrink-0" style={{ fontSize: 20 }}>logout</span>
+            {!collapsed && <span className="text-label-md whitespace-nowrap">Sign Out</span>}
+          </div>
+        )}
         <div
           onClick={onToggle}
           title={collapsed ? 'Expand' : 'Collapse'}
@@ -102,7 +141,7 @@ function ThemeToggleItem({ collapsed }) {
   );
 }
 
-export function TopBar({ sidebarWidth }) {
+export function TopBar({ sidebarWidth, user, onLogout }) {
   return (
     <header className="fixed top-0 right-0 h-16 glass-topbar flex justify-between items-center px-lg z-40 transition-all duration-300" style={{ left: sidebarWidth }}>
       <div className="flex items-center gap-xl">
@@ -121,9 +160,26 @@ export function TopBar({ sidebarWidth }) {
           <button className="w-9 h-9 rounded-xl flex items-center justify-center hover:bg-surface-container-high transition-all" style={{ backdropFilter: 'blur(8px)' }}>
             <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: 20 }}>notifications</span>
           </button>
-          <button className="w-9 h-9 rounded-xl flex items-center justify-center hover:bg-surface-container-high transition-all" style={{ backdropFilter: 'blur(8px)' }}>
-            <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: 20 }}>account_circle</span>
-          </button>
+          {user && (
+            <div className="flex items-center gap-sm ml-sm px-sm py-xs rounded-xl" style={{ background: 'var(--surface-container)' }}>
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: 'var(--primary-fixed)' }}>
+                <span className="text-primary font-black" style={{ fontSize: 10 }}>
+                  {(user.name || 'U').slice(0, 2).toUpperCase()}
+                </span>
+              </div>
+              <span className="text-label-sm text-on-surface font-medium">{user.name || user.email}</span>
+              {user.role === 'admin' && (
+                <span className="px-xs py-px rounded text-primary font-bold" style={{ fontSize: 9, background: 'var(--primary-fixed)' }}>ADMIN</span>
+              )}
+              <button
+                onClick={onLogout}
+                title="Sign Out"
+                className="w-7 h-7 rounded-lg flex items-center justify-center hover:bg-surface-container-high hover:text-error transition-all ml-xs"
+              >
+                <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: 16 }}>logout</span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

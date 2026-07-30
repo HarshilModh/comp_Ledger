@@ -5,13 +5,8 @@ const pool = new pg.Pool({
   connectionString: process.env.DATABASE_URL || 'postgresql://comp:comp_dev@localhost:5432/comp_ledger',
 });
 
-let registered = false;
-
 pool.on('connect', async (client) => {
-  if (!registered) {
-    await pgvector.registerTypes(client);
-    registered = true;
-  }
+  await pgvector.registerTypes(client);
 });
 
 export { pool };

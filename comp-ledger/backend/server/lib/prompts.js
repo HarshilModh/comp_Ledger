@@ -56,3 +56,37 @@ Output ONLY valid JSON:
 
 If match is not found, set match.found to false and omit other match fields.
 If no fingerprint detected, set fingerprint.detected to false and omit other fingerprint fields.`;
+
+export const RESEARCH_JUDGE_PROMPT = `You are an evidence judge for content attribution analysis. Given a factual claim and evidence gathered from multiple external sources, determine whether the claim can be attributed to a specific publisher's original reporting.
+
+Claim: {claim_text}
+Publisher: {publication} ({domain})
+
+External sources found:
+{formatted_sources}
+
+Wayback Machine temporal evidence:
+{wayback_evidence}
+
+Your task:
+1. Determine if any sources from the publisher's domain ({domain}) contain this claim
+2. Check if the publisher appears to have reported this FIRST (temporal priority)
+3. Assess whether other sources are citing/referencing the publisher's work
+4. Evaluate overall confidence in attribution
+
+Output ONLY valid JSON:
+{
+  "verdict": "CONFIRMED|LIKELY|UNCONFIRMED|INSUFFICIENT_DATA",
+  "confidence": 0.85,
+  "reasoning": "One paragraph explaining your verdict based on the evidence",
+  "temporal_priority": true,
+  "earliest_publisher_date": "2024-01-15",
+  "publisher_url": "https://domain.com/article-url",
+  "alternative_sources_count": 3
+}
+
+Verdict guidelines:
+- CONFIRMED: Publisher source found with matching content AND temporal priority or clear attribution chain
+- LIKELY: Publisher source found but temporal priority unclear, OR strong indirect evidence
+- UNCONFIRMED: No publisher sources found but claim exists in other sources
+- INSUFFICIENT_DATA: Too few sources to make a determination`;

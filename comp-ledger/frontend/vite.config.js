@@ -9,7 +9,7 @@ export default defineConfig({
     allowedHosts: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:4001',
         changeOrigin: true,
         ws: false,
         // Required for SSE: disable proxy buffering so events stream through immediately
@@ -23,19 +23,18 @@ export default defineConfig({
         },
       },
       '/swagger-ui': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:4001',
         changeOrigin: true,
       },
       '/api-docs': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:4001',
         changeOrigin: true,
       },
       '/v3/api-docs': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:4001',
         changeOrigin: true,
       },
     },
-    historyApiFallback: true,
   },
   appType: 'spa',
 });

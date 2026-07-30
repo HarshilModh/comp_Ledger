@@ -4,17 +4,21 @@ export function useTrace() {
   const [claims, setClaims] = useState([]);
   const [status, setStatus] = useState('idle');
   const [total, setTotal] = useState(0);
+  const [generatedAnswer, setGeneratedAnswer] = useState('');
+  const [generating, setGenerating] = useState(false);
 
-  const startTrace = useCallback(async (question, answer, mode = 'audit') => {
+  const startTrace = useCallback(async (question, answer, mode = 'audit', auto = false, modelId = null) => {
     setClaims([]);
     setTotal(0);
+    setGeneratedAnswer('');
+    setGenerating(auto);
     setStatus('streaming');
 
     try {
       const response = await fetch('/api/trace', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question, answer, mode }),
+        body: JSON.stringify({ question, answer, mode, auto, modelId }),
       });
 
       if (!response.ok) {
@@ -43,7 +47,12 @@ export function useTrace() {
           try {
             const parsed = JSON.parse(data);
 
-            if (eventType === 'claims_count') {
+            if (eventType === 'generating') {
+              setGenerating(true);
+            } else if (eventType === 'answer') {
+              setGeneratedAnswer(parsed.answer);
+              setGenerating(false);
+            } else if (eventType === 'claims_count') {
               setTotal(parsed.total);
             } else if (eventType === 'claim_scored') {
               setClaims(prev =>
@@ -68,7 +77,9 @@ export function useTrace() {
     setClaims([]);
     setStatus('idle');
     setTotal(0);
+    setGeneratedAnswer('');
+    setGenerating(false);
   }, []);
 
-  return { claims, status, total, startTrace, reset };
+  return { claims, status, total, generatedAnswer, generating, startTrace, reset };
 }

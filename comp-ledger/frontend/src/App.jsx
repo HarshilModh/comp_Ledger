@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Landing from './components/Landing.jsx';
 import InputPanel from './components/InputPanel.jsx';
 import Ledger from './components/Ledger.jsx';
@@ -9,6 +9,12 @@ import { Sidebar, TopBar, AppFooter, SIDEBAR_FULL, SIDEBAR_COLLAPSED } from './c
 import { useTrace } from './hooks/useTrace.js';
 import Compare from './components/Compare.jsx';
 import ResizablePanel from './components/ResizablePanel.jsx';
+import DeepResearch from './components/DeepResearch.jsx';
+import PublisherDashboard from './components/PublisherDashboard.jsx';
+import PublisherOnboard from './components/PublisherOnboard.jsx';
+import AuthPage from './components/AuthPage.jsx';
+import { AuthProvider, useAuth } from './hooks/useAuth.jsx';
+import { ErrorBoundary } from './components/ErrorBoundary.jsx';
 
 function StatCard({ icon, label, value, glow, tooltip }) {
   const [showTip, setShowTip] = useState(false);
@@ -35,11 +41,54 @@ function StatCard({ icon, label, value, glow, tooltip }) {
   );
 }
 
-function ClaimsPage({ claims, status, total, handleTrace, lastQuery, exportResult, setExportResult }) {
+function AnswerPanel({ answer, generating, modelLabel }) {
+  const [collapsed, setCollapsed] = useState(false);
+  if (!answer && !generating) return null;
+  return (
+    <div className="glass-card overflow-hidden row-animate">
+      <div className="px-md py-sm border-b border-outline-variant flex items-center justify-between"
+        style={{ background: 'rgba(22,163,74,0.03)' }}>
+        <div className="flex items-center gap-sm">
+          <span className="material-symbols-outlined text-primary" style={{ fontSize: 16 }}>smart_toy</span>
+          <span className="text-label-md font-bold text-on-surface">Generated Answer</span>
+          {modelLabel && (
+            <span className="px-sm py-px rounded-full text-label-sm font-medium text-on-surface-variant"
+              style={{ fontSize: 10, background: 'var(--surface-container)' }}>
+              {modelLabel}
+            </span>
+          )}
+        </div>
+        {answer && (
+          <button onClick={() => setCollapsed(c => !c)}
+            className="text-on-surface-variant hover:text-on-surface transition-colors">
+            <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+              {collapsed ? 'expand_more' : 'expand_less'}
+            </span>
+          </button>
+        )}
+      </div>
+      {generating && !answer ? (
+        <div className="px-md py-md flex items-center gap-sm">
+          <span className="material-symbols-outlined live-pulse text-primary" style={{ fontSize: 16 }}>pending</span>
+          <span className="text-body-sm text-on-surface-variant">Asking the model…</span>
+        </div>
+      ) : !collapsed && (
+        <div className="px-md py-md">
+          <p className="text-body-sm text-on-surface leading-relaxed" style={{ fontSize: 13 }}>{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ClaimsPage({ claims, status, total, handleTrace, lastQuery, exportResult, setExportResult, generatedAnswer, generating }) {
   const exclusive = claims.filter(c => c.exclusivity_score >= 0.7).length;
   const fingerprints = claims.filter(c => c.fingerprint?.detected).length;
   const matchedSources = claims.filter(c => c.match?.found).length;
   const totalClaims = claims.length;
+
+  const displayAnswer = generatedAnswer || lastQuery.answer;
+  const modelLabel = lastQuery.modelLabel;
 
   return (
     <>
@@ -47,7 +96,7 @@ function ClaimsPage({ claims, status, total, handleTrace, lastQuery, exportResul
         <StatCard icon="format_list_numbered" label="Active Claims" value={totalClaims || '—'} glow tooltip="Total factual claims extracted from the AI answer" />
         <StatCard icon="verified" label="Avg Exclusivity" value={exclusive ? `${Math.round((exclusive / (totalClaims || 1)) * 100)}%` : '—'} glow tooltip="Percentage of claims scoring 70%+ uniqueness" />
         <StatCard icon="public" label="Source Nodes" value={totalClaims > 0 ? `${matchedSources}/${totalClaims}` : '0/0'} tooltip="Claims matched to publisher sources vs total claims" />
-        <StatCard icon="fingerprint" label="Integrity Score" value={fingerprints > 0 ? 'Review' : 'AA+'} tooltip="Overall content integrity rating based on fingerprint detection" />
+        <StatCard icon="fingerprint" label="Integrity Score" value={fingerprints > 0 ? 'Review' : totalClaims > 0 ? 'AA+' : '—'} tooltip="Overall content integrity rating based on fingerprint detection" />
       </div>
 
       <ResizablePanel
@@ -56,19 +105,20 @@ function ClaimsPage({ claims, status, total, handleTrace, lastQuery, exportResul
         minRight={360}
         left={
           <div className="flex flex-col gap-md pr-0">
-            <InputPanel onTrace={handleTrace} status={status} />
+            <InputPanel onTrace={handleTrace} status={status} generating={generating} />
             {status === 'done' && claims.length > 0 && (
               <ExportButton
                 claims={claims}
                 question={lastQuery.question}
-                answer={lastQuery.answer}
+                answer={displayAnswer}
                 onResult={setExportResult}
               />
             )}
           </div>
         }
         right={
-          <div className="min-w-0 pl-0">
+          <div className="min-w-0 pl-0 flex flex-col gap-md">
+            <AnswerPanel answer={generatedAnswer} generating={generating} modelLabel={modelLabel} />
             {exportResult ? (
               <ExportSuccess result={exportResult} onBack={() => setExportResult(null)} />
             ) : (
@@ -82,7 +132,8 @@ function ClaimsPage({ claims, status, total, handleTrace, lastQuery, exportResul
 }
 
 function AppShell() {
-  const { claims, status, total, startTrace } = useTrace();
+  const { claims, status, total, generatedAnswer, generating, startTrace } = useTrace();
+  const { user, logout, isAdmin } = useAuth();
   const [lastQuery, setLastQuery] = useState({ question: '', answer: '' });
   const [exportResult, setExportResult] = useState(null);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -105,10 +156,18 @@ function AppShell() {
 
   const sidebarWidth = sidebarCollapsed ? SIDEBAR_COLLAPSED : SIDEBAR_FULL;
 
-  const handleTrace = (question, answer, mode) => {
-    setLastQuery({ question, answer });
+  const handleTrace = (question, answer, mode, auto = false, modelId = null) => {
+    const AUTO_MODELS = [
+      { id: 'us.anthropic.claude-haiku-4-5-20251001-v1:0', label: 'Claude Haiku 4.5' },
+      { id: 'us.anthropic.claude-sonnet-4-20250514-v1:0', label: 'Claude Sonnet 4' },
+      { id: 'us.amazon.nova-micro-v1:0', label: 'Nova Micro' },
+      { id: 'us.amazon.nova-lite-v1:0', label: 'Nova Lite' },
+      { id: 'us.meta.llama3-1-8b-instruct-v1:0', label: 'Llama 3.1 8B' },
+    ];
+    const modelLabel = modelId ? (AUTO_MODELS.find(m => m.id === modelId)?.label || '') : '';
+    setLastQuery({ question, answer, modelLabel });
     setExportResult(null);
-    startTrace(question, answer, mode);
+    startTrace(question, answer, mode, auto, modelId);
   };
 
   useEffect(() => {
@@ -131,27 +190,36 @@ function AppShell() {
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       <div className="ambient-mesh" />
-      <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(c => !c)} />
-      <TopBar sidebarWidth={sidebarWidth} />
+      <Sidebar collapsed={sidebarCollapsed} onToggle={() => setSidebarCollapsed(c => !c)} user={user} onLogout={logout} />
+      <TopBar sidebarWidth={sidebarWidth} user={user} onLogout={logout} />
 
       <main className="relative z-10 flex flex-col gap-lg transition-all duration-300" style={{ marginLeft: sidebarWidth, paddingTop: 88, paddingLeft: 32, paddingRight: 32, paddingBottom: 72 }}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/facts" replace />} />
-          <Route path="/dashboard" element={<Dashboard history={history} />} />
-          <Route path="/facts" element={
-            <ClaimsPage
-              claims={claims}
-              status={status}
-              total={total}
-              handleTrace={handleTrace}
-              lastQuery={lastQuery}
-              exportResult={exportResult}
-              setExportResult={setExportResult}
-            />
-          } />
-          <Route path="/compare" element={<Compare />} />
-          <Route path="*" element={<Navigate to="/facts" replace />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Navigate to="/facts" replace />} />
+            <Route path="/dashboard" element={<Dashboard history={history} />} />
+            <Route path="/facts" element={
+              <ClaimsPage
+                claims={claims}
+                status={status}
+                total={total}
+                handleTrace={handleTrace}
+                lastQuery={lastQuery}
+                exportResult={exportResult}
+                setExportResult={setExportResult}
+                generatedAnswer={generatedAnswer}
+                generating={generating}
+              />
+            } />
+            <Route path="/compare" element={<Compare />} />
+            <Route path="/deep-research" element={<DeepResearch />} />
+            <Route path="/publishers" element={
+              isAdmin ? <PublisherOnboard /> : <Navigate to={`/publisher/${user?.id}`} replace />
+            } />
+            <Route path="/publisher/:id" element={<PublisherDashboard />} />
+            <Route path="*" element={<Navigate to="/facts" replace />} />
+          </Routes>
+        </ErrorBoundary>
       </main>
 
       <AppFooter sidebarWidth={sidebarWidth} />
@@ -159,17 +227,24 @@ function AppShell() {
   );
 }
 
-export default function App() {
-  const [entered, setEntered] = useState(() => {
-    return sessionStorage.getItem('comp-ledger-entered') === 'true';
-  });
+function AuthGate() {
+  const { user, loading } = useAuth();
 
-  const handleEnter = () => {
-    sessionStorage.setItem('comp-ledger-entered', 'true');
-    setEntered(true);
-  };
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="ambient-mesh" />
+        <div className="relative z-10 flex flex-col items-center gap-md">
+          <span className="material-symbols-outlined live-pulse text-primary" style={{ fontSize: 40 }}>pending</span>
+          <p className="text-body-md text-on-surface-variant">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
-  if (!entered) return <Landing onEnter={handleEnter} />;
+  if (!user) {
+    return <AuthPage />;
+  }
 
   return (
     <BrowserRouter>
@@ -178,6 +253,14 @@ export default function App() {
         <Route path="/*" element={<AppShell />} />
       </Routes>
     </BrowserRouter>
+  );
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <AuthGate />
+    </AuthProvider>
   );
 }
 
