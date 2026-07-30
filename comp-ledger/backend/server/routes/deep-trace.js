@@ -62,6 +62,10 @@ router.post('/api/deep-trace', async (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders();
+
+  // Keepalive to prevent CloudFront/QUIC from killing the connection
+  const heartbeat = setInterval(() => res.write(':keepalive\n\n'), 15000);
 
   try {
     const claims = await decompose(question, answer);
@@ -94,9 +98,11 @@ router.post('/api/deep-trace', async (req, res) => {
       traceId = r.rows[0]?.id;
     } catch (_) {}
 
+    clearInterval(heartbeat);
     sse(res, 'done', { trace_id: traceId });
     res.end();
   } catch (err) {
+    clearInterval(heartbeat);
     sse(res, 'error', { error: err.message });
     res.end();
   }

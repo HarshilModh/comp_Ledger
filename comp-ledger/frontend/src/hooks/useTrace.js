@@ -29,47 +29,57 @@ export function useTrace() {
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
+      let receivedClaims = false;
+      let receivedDone = false;
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
 
-        const parts = buffer.split('\n\n');
-        buffer = parts.pop();
+          const parts = buffer.split('\n\n');
+          buffer = parts.pop();
 
-        for (const block of parts) {
-          if (!block.trim()) continue;
-          const eventMatch = block.match(/^event:\s*(.+)\ndata:\s*(.+)$/ms);
-          if (!eventMatch) continue;
-          const [, eventType, data] = eventMatch;
+          for (const block of parts) {
+            if (!block.trim()) continue;
+            const eventMatch = block.match(/^event:\s*(.+)\ndata:\s*(.+)$/ms);
+            if (!eventMatch) continue;
+            const [, eventType, data] = eventMatch;
 
-          try {
-            const parsed = JSON.parse(data);
+            try {
+              const parsed = JSON.parse(data);
 
-            if (eventType === 'generating') {
-              setGenerating(true);
-            } else if (eventType === 'answer') {
-              setGeneratedAnswer(parsed.answer);
-              setGenerating(false);
-            } else if (eventType === 'claims_count') {
-              setTotal(parsed.total);
-            } else if (eventType === 'claim_scored') {
-              setClaims(prev =>
-                [...prev, parsed].sort((a, b) => b.exclusivity_score - a.exclusivity_score)
-              );
-            } else if (eventType === 'done') {
-              setStatus('done');
-            } else if (eventType === 'error') {
-              setStatus('error');
-            }
-          } catch (_) {}
+              if (eventType === 'generating') {
+                setGenerating(true);
+              } else if (eventType === 'answer') {
+                setGeneratedAnswer(parsed.answer);
+                setGenerating(false);
+              } else if (eventType === 'claims_count') {
+                setTotal(parsed.total);
+              } else if (eventType === 'claim_scored') {
+                receivedClaims = true;
+                setClaims(prev =>
+                  [...prev, parsed].sort((a, b) => b.exclusivity_score - a.exclusivity_score)
+                );
+              } else if (eventType === 'done') {
+                receivedDone = true;
+                setStatus('done');
+              } else if (eventType === 'error') {
+                setStatus('error');
+              }
+            } catch (_) {}
+          }
         }
+      } catch (streamErr) {
+        console.warn('[Trace] Stream read error:', streamErr.message);
       }
 
-      setStatus(prev => prev === 'streaming' ? 'done' : prev);
+      if (!receivedDone) {
+        setStatus(prev => receivedClaims ? 'done' : (prev === 'streaming' ? 'error' : prev));
+      }
     } catch (err) {
-      setStatus('error');
+      setStatus(prev => prev === 'streaming' ? 'error' : prev);
     }
   }, []);
 

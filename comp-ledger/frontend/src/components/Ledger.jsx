@@ -80,7 +80,7 @@ export default function Ledger({ claims, status, total }) {
     );
   }
 
-  if (status === 'error') {
+  if (status === 'error' && claims.length === 0) {
     return (
       <div className="glass-card flex flex-col items-center justify-center gap-md text-center p-xl" style={{ minHeight: 200 }}>
         <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>

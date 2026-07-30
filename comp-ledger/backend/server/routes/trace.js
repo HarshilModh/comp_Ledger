@@ -35,6 +35,9 @@ router.post('/api/trace', async (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
+  res.flushHeaders();
+
+  const heartbeat = setInterval(() => res.write(':keepalive\n\n'), 15000);
 
   try {
     let answer = manualAnswer;
@@ -74,6 +77,7 @@ router.post('/api/trace', async (req, res) => {
       }
     }
 
+    clearInterval(heartbeat);
     sse(res, 'done', {});
     res.end();
 
@@ -82,6 +86,7 @@ router.post('/api/trace', async (req, res) => {
     } catch (_) {}
 
   } catch (err) {
+    clearInterval(heartbeat);
     sse(res, 'error', { error: err.message });
     res.end();
   }

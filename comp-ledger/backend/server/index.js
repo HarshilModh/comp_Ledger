@@ -20,6 +20,28 @@ const app = express();
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
+// Ensure CORS headers are set and disable HTTP/3 for SSE streams
+app.use((req, res, next) => {
+  const originalWrite = res.write;
+  let headersSent = false;
+  res.write = function (...args) {
+    if (!headersSent) {
+      headersSent = true;
+      if (!res.headersSent) {
+        const origin = req.headers.origin;
+        if (origin) {
+          res.setHeader('Access-Control-Allow-Origin', origin);
+          res.setHeader('Access-Control-Allow-Credentials', 'true');
+        }
+        // Disable HTTP/3 (QUIC) for streaming responses — CloudFront drops long-lived QUIC streams
+        res.setHeader('Alt-Svc', 'clear');
+      }
+    }
+    return originalWrite.apply(this, args);
+  };
+  next();
+});
+
 const limiter = rateLimit({ windowMs: 60_000, max: 200, standardHeaders: true, legacyHeaders: false });
 app.use(limiter);
 

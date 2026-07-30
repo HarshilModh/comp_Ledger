@@ -20,6 +20,7 @@ export function useDeepTrace() {
       });
 
       if (!response.ok) {
+        console.error('[DeepTrace] HTTP error:', response.status, response.statusText);
         setStatus('error');
         return;
       }
@@ -27,65 +28,76 @@ export function useDeepTrace() {
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let buffer = '';
+      let receivedClaims = false;
+      let receivedDone = false;
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buffer += decoder.decode(value, { stream: true });
 
-        const parts = buffer.split('\n\n');
-        buffer = parts.pop();
+          const parts = buffer.split('\n\n');
+          buffer = parts.pop();
 
-        for (const block of parts) {
-          if (!block.trim()) continue;
+          for (const block of parts) {
+            if (!block.trim()) continue;
 
-          let eventType = '';
-          let dataStr = '';
+            let eventType = '';
+            let dataStr = '';
 
-          for (const line of block.split('\n')) {
-            if (line.startsWith('event:')) {
-              eventType = line.slice(6).trim();
-            } else if (line.startsWith('data:')) {
-              dataStr += line.slice(5).trim();
+            for (const line of block.split('\n')) {
+              if (line.startsWith('event:')) {
+                eventType = line.slice(6).trim();
+              } else if (line.startsWith('data:')) {
+                dataStr += line.slice(5).trim();
+              }
             }
+
+            if (!eventType || !dataStr) continue;
+
+            try {
+              const parsed = JSON.parse(dataStr);
+
+              if (eventType === 'claims_count') {
+                setTotal(parsed.total);
+              } else if (eventType === 'research_start') {
+                setResearchSources(prev => ({
+                  ...prev,
+                  [parsed.claim_id]: { sources: [], domain: parsed.publisher_domain },
+                }));
+              } else if (eventType === 'research_source') {
+                setResearchSources(prev => ({
+                  ...prev,
+                  [parsed.claim_id]: {
+                    ...prev[parsed.claim_id],
+                    sources: [...(prev[parsed.claim_id]?.sources || []), parsed.source],
+                  },
+                }));
+              } else if (eventType === 'claim_scored') {
+                receivedClaims = true;
+                setClaims(prev =>
+                  [...prev, parsed].sort((a, b) => b.exclusivity_score - a.exclusivity_score)
+                );
+              } else if (eventType === 'done') {
+                receivedDone = true;
+                setStatus('done');
+              } else if (eventType === 'error') {
+                setStatus('error');
+              }
+            } catch (_) {}
           }
-
-          if (!eventType || !dataStr) continue;
-
-          try {
-            const parsed = JSON.parse(dataStr);
-
-            if (eventType === 'claims_count') {
-              setTotal(parsed.total);
-            } else if (eventType === 'research_start') {
-              setResearchSources(prev => ({
-                ...prev,
-                [parsed.claim_id]: { sources: [], domain: parsed.publisher_domain },
-              }));
-            } else if (eventType === 'research_source') {
-              setResearchSources(prev => ({
-                ...prev,
-                [parsed.claim_id]: {
-                  ...prev[parsed.claim_id],
-                  sources: [...(prev[parsed.claim_id]?.sources || []), parsed.source],
-                },
-              }));
-            } else if (eventType === 'claim_scored') {
-              setClaims(prev =>
-                [...prev, parsed].sort((a, b) => b.exclusivity_score - a.exclusivity_score)
-              );
-            } else if (eventType === 'done') {
-              setStatus('done');
-            } else if (eventType === 'error') {
-              setStatus('error');
-            }
-          } catch (_) {}
         }
+      } catch (streamErr) {
+        console.warn('[DeepTrace] Stream read error:', streamErr.message);
       }
 
-      setStatus(prev => prev === 'streaming' ? 'done' : prev);
+      if (!receivedDone) {
+        setStatus(prev => receivedClaims ? 'done' : (prev === 'streaming' ? 'error' : prev));
+      }
     } catch (err) {
-      setStatus('error');
+      console.error('[DeepTrace] Exception:', err.name, err.message);
+      setStatus(prev => prev === 'streaming' ? 'error' : prev);
     }
   }, []);
 
