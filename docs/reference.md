@@ -108,20 +108,21 @@ You can also connect an RSS feed or a REST API in the Publisher settings: CoMP L
 
 ## API Reference
 
-### Trace Endpoints
+### Trace endpoints
 
-All trace endpoints return a **Server-Sent Events (SSE)** stream.
+All four trace endpoints return a **Server-Sent Events (SSE)** stream.
 
-#### `POST /api/trace`
-Standard trace against the local corpus.
+| Endpoint | Request body | What it does |
+|---|---|---|
+| `POST /api/trace` | `question`, optional `answer`, `mode`, `auto`, `modelId` | Traces an answer against the whole publisher corpus. With `auto` and no `answer`, it first generates the answer with the chosen Bedrock model. |
+| `POST /api/article-check` | `question`, `answer`, `publisher_id` | Traces an answer against one publisher's archive only. |
+| `POST /api/deep-trace` | `question`, `answer`, `publisher_id` | Trace plus live research (Wikipedia, Google Custom Search, OpenAlex, Wayback Machine) and a verdict per claim. |
+| `POST /api/multi-trace` | `question`, optional `modelIds` | Generates an answer from each chosen model (all available models if none given) and traces each one. |
 
-#### `POST /api/deep-trace`
-Trace with live external research (Wikipedia, Google, OpenAlex, GDELT, Wayback).
+`GET /api/models` lists the models available to `/api/trace` and `/api/multi-trace`.
 
-#### `POST /api/multi-trace`
-Run the same question across multiple AI models and compare results.
+**Example request (`/api/deep-trace`):**
 
-**Request body (all three):**
 ```json
 {
   "question": "What did Trump pay in federal taxes in 2020?",
@@ -130,83 +131,94 @@ Run the same question across multiple AI models and compare results.
 }
 ```
 
-**SSE event stream:**
+**SSE events:**
 
-```
-event: claims_count
-data: {"total": 3}
+| Event | Sent by | Payload |
+|---|---|---|
+| `generating`, `answer` | trace (auto mode) | The model being called, then its answer |
+| `claims_count` | trace, article check, deep research | Number of claims found |
+| `claim_scored` | all | One scored claim (see below) |
+| `research_start`, `research_source` | deep research | Research starting for a claim, then each source found |
+| `models`, `model_start`, `model_answer`, `model_done`, `model_error` | multi-trace | Progress for each model |
+| `error` | all | An error message |
+| `done` | all | End of the stream |
 
-event: claim_scored
-data: {
+**A `claim_scored` payload:**
+
+```json
+{
   "claim_id": 1,
   "claim_text": "Trump paid $750 in federal income taxes in 2020",
-  "exclusivity_score": 0.87,
-  "match": {"found": true, "score": 0.91, "article_url": "https://..."},
-  "fingerprint": {"detected": true, "phrase": "tax records obtained by the Times"},
-  "exclusivity": {"independent_source_count": 1}
+  "match": { "found": true },
+  "exclusivity": { "independent_source_count": 1, "sources": [], "reasoning": "..." },
+  "fingerprint": { "detected": true },
+  "exclusivity_score": 0.71
 }
-
-event: done
-data: {"trace_id": "uuid"}
 ```
 
-**Additional events for `/api/deep-trace`:**
-```
-event: research_start
-data: {"claim_id": 1, "publisher_domain": "nytimes.com"}
+Deep research claims also carry the research sources, Wayback results and a judge verdict of `CONFIRMED`, `LIKELY`, `UNCONFIRMED` or `INSUFFICIENT_DATA`. `CONFIRMED` adds 0.20 to the score and `LIKELY` adds 0.10, capped at 1.0.
 
-event: research_source
-data: {"claim_id": 1, "source": {"title": "...", "url": "...", "sourceType": "WIKIPEDIA"}}
-```
-
-### Other Endpoints
+### Other endpoints
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `GET` | `/api/publishers` | List publishers |
-| `POST` | `/api/publishers` | Register a publisher |
-| `GET` | `/api/articles` | List articles for a publisher |
-| `POST` | `/api/ingest` | Manually ingest articles |
-| `GET` | `/api/traces` | List trace history |
-| `POST` | `/api/export/:traceId` | Generate signed S3 evidence record |
+| `POST` | `/api/auth/register`, `/api/auth/login`, `/api/auth/logout`, `/api/auth/google` | Sign up, sign in (password or Google), sign out |
+| `GET` | `/api/auth/me` | Current user |
+| `PUT` | `/api/auth/change-password` | Change password |
+| `GET` / `POST` | `/api/publishers` | List or register publishers |
+| `GET` / `PUT` / `DELETE` | `/api/publishers/:id` | Read, update or remove a publisher |
+| `GET` | `/api/publishers/:id/stats`, `/api/publishers/:id/activity` | Publisher dashboard data |
+| `GET` / `POST` | `/api/publishers/:id/articles` | List or add articles |
+| `POST` | `/api/publishers/:id/articles/bulk`, `/articles/url`, `/articles/bulk-url` | Bulk JSON or URL import |
+| `DELETE` | `/api/publishers/:id/articles/:articleId` | Remove an article |
+| `POST` | `/api/publishers/:id/rss/poll` | Poll the publisher's RSS feed now |
+| `POST` | `/api/publishers/:id/crawl` | Discover articles from the site's sitemaps and feeds |
+| `PUT` / `DELETE` | `/api/publishers/:id/pull-config` | Set or clear a pull source |
+| `PUT` | `/api/publishers/:id/pull-schedule` | `hourly`, `daily`, `weekly` or `null` |
+| `POST` | `/api/publishers/:id/pull`, `/api/publishers/:id/pull-test` | Run or test a pull |
+| `POST` / `DELETE` | `/api/publishers/:id/api-key` | Create or revoke the publisher's push API key |
+| `POST` | `/api/ingest`, `/api/ingest/batch` | Push articles with the publisher API key (`Authorization: Bearer` or `x-api-key`) |
+| `POST` | `/api/webhook/:publisherId` | Webhook ingestion (`x-webhook-secret` or `x-api-key`) |
+| `GET` | `/api/traces`, `/api/traces/:id` | Trace history |
+| `POST` | `/api/export` | Build an evidence record and write it to S3 |
 | `GET` | `/api/health` | Health check |
 
 ---
 
 ## Evidence Export Format
 
-Each export is written to S3 as a SHA-256 signed JSON record:
+`POST /api/export` takes `claims`, `question`, `answer` and an optional `publisher_name`, and writes a JSON record like this to S3:
 
 ```json
 {
   "version": "1.0",
-  "generator": "comp-ledger",
-  "publisher": {
-    "id": "uuid",
-    "name": "The New York Times",
-    "domain": "nytimes.com"
-  },
-  "trace": {
-    "question": "What did Trump pay in federal taxes in 2020?",
-    "answer": "...",
-    "mode": "standard",
-    "created_at": "2026-07-30T00:00:00Z"
-  },
+  "type": "comp_evidence_record",
+  "generated_at": "2026-07-30T00:00:00.000Z",
+  "generator": "comp-ledger/0.1.0",
+  "publisher": { "name": "Silicon Insider", "archive_id": "silicon-insider-2024-q1" },
+  "query": { "question": "...", "answer": "..." },
   "claims": [
     {
-      "claim_id": 1,
-      "claim_text": "Trump paid $750 in federal income taxes in 2020",
-      "exclusivity_score": 0.87,
-      "match": { "found": true, "score": 0.91 },
-      "fingerprint": { "detected": true, "phrase": "tax records obtained by the Times" },
-      "exclusivity": { "independent_source_count": 1 }
+      "id": 1,
+      "text": "...",
+      "exclusivity_score": 0.71,
+      "independent_source_count": 1,
+      "match": { "found": true },
+      "fingerprint": { "detected": true },
+      "agreement_status": "unlicensed"
     }
   ],
-  "integrity": "sha256:abc123..."
+  "summary": {
+    "total_claims": 3,
+    "exclusive_claims": 1,
+    "fingerprinted_claims": 1,
+    "average_exclusivity": 0.42
+  },
+  "integrity": { "sha256": "abc123..." }
 }
 ```
 
-The `integrity` hash is computed over the full document before the `integrity` field itself is added: making the record tamper-evident. The same hash is written as an `x-sha256` metadata header on the S3 object for quick verification without downloading the file.
+The SHA-256 hash is computed over the record before the `integrity` field is added, which makes the record tamper-evident: anyone can remove `integrity`, recompute the hash and compare. The same hash is stored as `x-sha256` metadata on the S3 object, and its first 8 characters are part of the file name. If the S3 write fails, the API still returns the record and its hash.
 
 ---
 
