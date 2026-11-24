@@ -6,3 +6,11 @@ frontend/dist/
 frontend/.vite/
 backend/data/index.json
 backend/data/demo-fallback.json
+
+# Java build output
+java-backend/target/
+
+# Python
+backend-python/.env
+__pycache__/
+.venv/
