@@ -13,6 +13,7 @@
 
 ## Contents
 
+- [Architecture](#architecture)
 - [The problem](#the-problem)
 - [At a glance](#at-a-glance)
 - [How a trace works](#how-a-trace-works)
@@ -21,13 +22,40 @@
 - [Ways to run a check](#ways-to-run-a-check)
 - [Getting publisher content in](#getting-publisher-content-in)
 - [Evidence record](#evidence-record)
-- [Architecture](#architecture)
 - [Engineering decisions](#engineering-decisions)
 - [Three implementations](#three-implementations)
 - [Tech stack](#tech-stack)
 - [Run it locally](#run-it-locally)
 - [API overview](#api-overview)
 - [Repository layout](#repository-layout)
+
+## Architecture
+
+```mermaid
+flowchart LR
+  A[Question and AI answer] --> B[Split into claims<br/>Claude Haiku 4.5]
+  B --> C[Embed each claim<br/>Titan Embed v2]
+  C --> D[(pgvector<br/>publisher archive)]
+  C --> E[(pgvector<br/>reference corpus)]
+  D --> F[Judge match, sources,<br/>fingerprint<br/>Claude Sonnet 4]
+  E --> F
+  F --> G[Exclusivity score]
+  G --> R[Deep research<br/>Wikipedia, Google, OpenAlex,<br/>Wayback + Sonnet verdict]
+  G --> H[SSE stream to React UI]
+  R --> H
+  G --> I[(PostgreSQL<br/>trace history)]
+  I --> J[Evidence record<br/>SHA-256 hash, S3]
+```
+
+**Data model (PostgreSQL 16 + pgvector):**
+
+| Table | Holds |
+|---|---|
+| `publishers` | Publisher profile, domain, status, API key, pull and RSS config |
+| `articles` | Every ingested article and its processing status |
+| `embeddings` | 300 word passages with their vectors, tagged `publisher` or `reference`, with an HNSW cosine index |
+| `traces` | Each question, answer, mode and its scored claims |
+| `research_results` | Deep research sources and verdicts |
 
 ## The problem
 
@@ -118,34 +146,6 @@ Each article is split into 300 word passages, embedded and stored in the `embedd
 - a summary: total claims, exclusive claims (score 0.5 or higher), fingerprinted claims and average exclusivity
 
 The server computes a **SHA-256 hash of the record**, adds it as `integrity.sha256`, and stores the file in S3 with the same hash in its `x-sha256` object metadata. Anyone holding the file can recompute the hash and confirm it hasn't been edited since export. The full format is in [docs/reference.md](docs/reference.md#evidence-export-format).
-
-## Architecture
-
-```mermaid
-flowchart LR
-  A[Question and AI answer] --> B[Split into claims<br/>Claude Haiku 4.5]
-  B --> C[Embed each claim<br/>Titan Embed v2]
-  C --> D[(pgvector<br/>publisher archive)]
-  C --> E[(pgvector<br/>reference corpus)]
-  D --> F[Judge match, sources,<br/>fingerprint<br/>Claude Sonnet 4]
-  E --> F
-  F --> G[Exclusivity score]
-  G --> R[Deep research<br/>Wikipedia, Google, OpenAlex,<br/>Wayback + Sonnet verdict]
-  G --> H[SSE stream to React UI]
-  R --> H
-  G --> I[(PostgreSQL<br/>trace history)]
-  I --> J[Evidence record<br/>SHA-256 hash, S3]
-```
-
-**Data model (PostgreSQL 16 + pgvector):**
-
-| Table | Holds |
-|---|---|
-| `publishers` | Publisher profile, domain, status, API key, pull and RSS config |
-| `articles` | Every ingested article and its processing status |
-| `embeddings` | 300 word passages with their vectors, tagged `publisher` or `reference`, with an HNSW cosine index |
-| `traces` | Each question, answer, mode and its scored claims |
-| `research_results` | Deep research sources and verdicts |
 
 ## Engineering decisions
 
